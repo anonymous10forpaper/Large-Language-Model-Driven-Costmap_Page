@@ -382,7 +382,7 @@ Reference map</button><a class="text-button" id="rule-parser-link" href="https:/
       $('source-info').replaceChildren(dl);
       if(mode!=='demonstrations'){$('source-info').append(element('p','','These researcher-directed, AI-assisted command sets are distinct from the participant-authored User Study.'));}
       else{$('source-info').append(element('p','','This is the 15-demonstration base prompt, without an extra User Study demonstration. No clarify/ambiguity demonstrations are included. The original policy JSON is preserved, including the empty arrays in rejection examples.'));}
-      if(mode==='commands'){$('source-info').append(element('p','','All 150 rendered policies are checked against their original semantic signatures with the archived evaluator. The legacy preferences entry is empty in every signature and is not an active policy field. Default person clearance is 1.5 m; numeric soft costs range from 0 to 253.'));}
+      if(mode==='commands'){$('source-info').append(element('p','','All 150 rendered policies are checked against their original semantic signatures with the archived evaluator. The legacy preferences entry is empty in every signature and is not an active policy field. Default person clearance is 1.5 m; numeric soft costs range from 0 to 252.'));}
       if(mode==='contradictions'){$('source-info').append(element('p','','The rejection target describes contradiction recognition. End-to-end containment is a separate measure of whether an invalid update is stopped before policy projection. These are reference labels, not model predictions.'));}
       $('translation-control').hidden=mode==='demonstrations';
     }
