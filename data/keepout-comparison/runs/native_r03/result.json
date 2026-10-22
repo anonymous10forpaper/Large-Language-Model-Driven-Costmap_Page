@@ -1,0 +1,23 @@
+{
+  "trial": "native_r03",
+  "condition": "native",
+  "status": "completed",
+  "started_at": "2026-10-22T15:09:57+0900",
+  "goal_accepted_sim_time": 34.2,
+  "action_status": 4,
+  "missed_waypoints": [],
+  "navigation_success": true,
+  "travel_time_s": 86.44200000000001,
+  "travel_distance_m": 37.30811461021074,
+  "accepted_to_terminal_s": 86.7,
+  "first_motion_sim_time": 34.458,
+  "terminal_sim_time": 120.9,
+  "odom_samples": 2543,
+  "maximum_odom_gap_s": 0.034000000000006025,
+  "ground_truth_zone_a_samples": 0,
+  "final_truth_map_xy": [
+    32.060139805994794,
+    0.22461792294113536
+  ],
+  "finished_at": "2026-10-22T15:12:03+0900"
+}

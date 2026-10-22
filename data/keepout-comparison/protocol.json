@@ -1,0 +1,53 @@
+{
+  "created_at": "2026-10-22T14:58:47+0900",
+  "runner_sha256": "c56235cd043a0dde03d9bbbcae9b841db2e64e1c813ae740a38089f72dbd7538",
+  "planned_trials_per_condition": 5,
+  "schedule": [
+    {
+      "trial": "custom_r01",
+      "condition": "custom"
+    },
+    {
+      "trial": "native_r01",
+      "condition": "native"
+    },
+    {
+      "trial": "native_r02",
+      "condition": "native"
+    },
+    {
+      "trial": "custom_r02",
+      "condition": "custom"
+    },
+    {
+      "trial": "custom_r03",
+      "condition": "custom"
+    },
+    {
+      "trial": "native_r03",
+      "condition": "native"
+    },
+    {
+      "trial": "native_r04",
+      "condition": "native"
+    },
+    {
+      "trial": "custom_r04",
+      "condition": "custom"
+    },
+    {
+      "trial": "custom_r05",
+      "condition": "custom"
+    },
+    {
+      "trial": "native_r05",
+      "condition": "native"
+    }
+  ],
+  "failed_trials": "Retain, report, and stop for diagnosis; no hidden replacement.",
+  "pilots": "All folders named pilot_* are setup/protocol checks, excluded from primary means.",
+  "policy_delivery": "Wait for backend subscription, publish each state three times at one-second wall intervals, then wait three seconds; snapshots are settled observations, NOT latency measurements.",
+  "fixed_environment": "Fresh Gazebo world and fresh AMCL/Nav2 for every run; EXACT 01/09 archive Waffle SDF/URDF/robot meshes in reference_assets, factory6 map, factory_test1 world (archive-identical), Gazebo seed 42. Same start, goal, obstacle world, controller, planner, robot radius and inflation parameters. No physical robot. Earlier current-workspace-SDF cohort is preserved separately and excluded.",
+  "comparison": "Global-only Zone A hard keepout. Native has standard KeepoutFilter and extra filter-stage InflationLayer; custom has KeepoutCommandLayer before the existing InflationLayer. Local costmap identical. Zone cells aligned to the custom inclusive raster bounds.",
+  "interpretation": "Limited native baseline for a single fixed-policy case, not proof of superior planning, semantic reasoning, statistical equivalence or all custom layers."
+}

@@ -1,0 +1,11 @@
+trial,condition,blocked_all_zone_cells_lethal,blocked_path_avoids_zone,released_zone_restored,released_zone_and_inflation_restored,zone_and_inflation_changed_cells,released_path_uses_zone,reapplied_path_avoids_zone,full_map_different_after_release,new_lethal_cells_after_release,baseline_zone_lethal_cells,blocked_zone_cells,blocked_path_length_m,released_path_length_m
+custom_r01,custom,True,True,True,True,0,True,True,228,4,229,22400,36.9747563435373,32.40076969704504
+native_r01,native,True,True,True,True,0,True,True,228,4,229,22400,36.97458772082213,32.40076969704504
+native_r02,native,True,True,True,True,0,True,True,115,3,229,22400,36.97458772082213,32.40076969704504
+custom_r02,custom,True,True,True,True,0,True,True,5226,4,229,22400,36.9747563435373,32.40076969704504
+custom_r03,custom,True,True,True,True,0,True,True,228,4,229,22400,36.9747563435373,32.40076969704504
+native_r03,native,True,True,True,True,0,True,True,248,4,229,22400,36.974754003729025,32.403533851683385
+native_r04,native,True,True,True,True,0,True,True,114,1,229,22400,36.97465013049938,32.40570234970529
+custom_r04,custom,True,True,True,True,0,True,True,228,4,229,22400,36.9747563435373,32.40076969704504
+custom_r05,custom,True,True,True,True,0,True,True,228,4,229,22400,36.9747563435373,32.40076969704504
+native_r05,native,True,True,True,True,0,True,True,159,2,229,22400,36.97462015089785,32.40596331354066

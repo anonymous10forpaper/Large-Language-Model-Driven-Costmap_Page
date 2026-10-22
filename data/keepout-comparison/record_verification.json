@@ -1,0 +1,332 @@
+{
+  "created_at_utc": "2026-10-22T11:39:32.228902+00:00",
+  "scope": "Independent recalculation from supplied records; no simulator rerun and no third-party certification.",
+  "trials": [
+    {
+      "trial": "custom_r01",
+      "condition": "custom",
+      "checks": {
+        "distance_matches_result": true,
+        "time_matches_result": true,
+        "first_motion_matches": true,
+        "result_matches_csv": true,
+        "odometry_hash_matches_audit": true,
+        "sample_count_matches": true,
+        "gt_zone_count_matches": true,
+        "nav2_yaml_hash_matches": true
+      },
+      "distance_recomputed_m": 37.49334186430735,
+      "duration_recomputed_s": 86.826,
+      "distance_delta_m": 4.973799150320701e-14,
+      "time_delta_s": 0.0,
+      "odometry_sha256": "3a02857d91b6d9561e96ca0a0abb9cf5534e93d641412780af841b366f3d1455",
+      "recorded_gt_zone_samples": 0
+    },
+    {
+      "trial": "native_r01",
+      "condition": "native",
+      "checks": {
+        "distance_matches_result": true,
+        "time_matches_result": true,
+        "first_motion_matches": true,
+        "result_matches_csv": true,
+        "odometry_hash_matches_audit": true,
+        "sample_count_matches": true,
+        "gt_zone_count_matches": true,
+        "nav2_yaml_hash_matches": true
+      },
+      "distance_recomputed_m": 37.18137171637543,
+      "duration_recomputed_s": 86.02600000000001,
+      "distance_delta_m": -3.552713678800501e-14,
+      "time_delta_s": 0.0,
+      "odometry_sha256": "755628b299463c23407ddc6e24d9838cfa9e1121b821005703a4f8a814cc93aa",
+      "recorded_gt_zone_samples": 0
+    },
+    {
+      "trial": "native_r02",
+      "condition": "native",
+      "checks": {
+        "distance_matches_result": true,
+        "time_matches_result": true,
+        "first_motion_matches": true,
+        "result_matches_csv": true,
+        "odometry_hash_matches_audit": true,
+        "sample_count_matches": true,
+        "gt_zone_count_matches": true,
+        "nav2_yaml_hash_matches": true
+      },
+      "distance_recomputed_m": 37.41073381901836,
+      "duration_recomputed_s": 86.555,
+      "distance_delta_m": -7.105427357601002e-15,
+      "time_delta_s": 0.0,
+      "odometry_sha256": "f5b3634dc1bc2ad653320ac91313a88e9eaad84e7318b3152823e99eb413f6aa",
+      "recorded_gt_zone_samples": 0
+    },
+    {
+      "trial": "custom_r02",
+      "condition": "custom",
+      "checks": {
+        "distance_matches_result": true,
+        "time_matches_result": true,
+        "first_motion_matches": true,
+        "result_matches_csv": true,
+        "odometry_hash_matches_audit": true,
+        "sample_count_matches": true,
+        "gt_zone_count_matches": true,
+        "nav2_yaml_hash_matches": true
+      },
+      "distance_recomputed_m": 37.171040599894326,
+      "duration_recomputed_s": 86.148,
+      "distance_delta_m": 8.526512829121202e-14,
+      "time_delta_s": 0.0,
+      "odometry_sha256": "c0728c1d35dee46017f8e5f0f2de6126046adf2b8713f811f1062f8a1d801316",
+      "recorded_gt_zone_samples": 0
+    },
+    {
+      "trial": "custom_r03",
+      "condition": "custom",
+      "checks": {
+        "distance_matches_result": true,
+        "time_matches_result": true,
+        "first_motion_matches": true,
+        "result_matches_csv": true,
+        "odometry_hash_matches_audit": true,
+        "sample_count_matches": true,
+        "gt_zone_count_matches": true,
+        "nav2_yaml_hash_matches": true
+      },
+      "distance_recomputed_m": 37.25818046593904,
+      "duration_recomputed_s": 86.148,
+      "distance_delta_m": 1.4210854715202004e-14,
+      "time_delta_s": 0.0,
+      "odometry_sha256": "2c4edc317963cc12e43f7df2f4e13829591ec97cd31e79a222420022832d7942",
+      "recorded_gt_zone_samples": 0
+    },
+    {
+      "trial": "native_r03",
+      "condition": "native",
+      "checks": {
+        "distance_matches_result": true,
+        "time_matches_result": true,
+        "first_motion_matches": true,
+        "result_matches_csv": true,
+        "odometry_hash_matches_audit": true,
+        "sample_count_matches": true,
+        "gt_zone_count_matches": true,
+        "nav2_yaml_hash_matches": true
+      },
+      "distance_recomputed_m": 37.30811461021063,
+      "duration_recomputed_s": 86.44200000000001,
+      "distance_delta_m": -1.0658141036401503e-13,
+      "time_delta_s": 0.0,
+      "odometry_sha256": "5543eddafa7dce341c8bc1ab715bedb4c57a2cd4bdad4ae827855c0b300b2659",
+      "recorded_gt_zone_samples": 0
+    },
+    {
+      "trial": "native_r04",
+      "condition": "native",
+      "checks": {
+        "distance_matches_result": true,
+        "time_matches_result": true,
+        "first_motion_matches": true,
+        "result_matches_csv": true,
+        "odometry_hash_matches_audit": true,
+        "sample_count_matches": true,
+        "gt_zone_count_matches": true,
+        "nav2_yaml_hash_matches": true
+      },
+      "distance_recomputed_m": 37.35274786773631,
+      "duration_recomputed_s": 86.49799999999999,
+      "distance_delta_m": 4.263256414560601e-14,
+      "time_delta_s": 0.0,
+      "odometry_sha256": "8b69e3a36760dfd9b840b8fe44624ab91ede23745e52ac4ead7b6ac3a626a20e",
+      "recorded_gt_zone_samples": 0
+    },
+    {
+      "trial": "custom_r04",
+      "condition": "custom",
+      "checks": {
+        "distance_matches_result": true,
+        "time_matches_result": true,
+        "first_motion_matches": true,
+        "result_matches_csv": true,
+        "odometry_hash_matches_audit": true,
+        "sample_count_matches": true,
+        "gt_zone_count_matches": true,
+        "nav2_yaml_hash_matches": true
+      },
+      "distance_recomputed_m": 37.367477342022895,
+      "duration_recomputed_s": 86.564,
+      "distance_delta_m": -1.4210854715202004e-14,
+      "time_delta_s": 0.0,
+      "odometry_sha256": "9f2ba146b2507ee8b46335afaa7fcb453f03890442d9dde98044cf3562cd542f",
+      "recorded_gt_zone_samples": 0
+    },
+    {
+      "trial": "custom_r05",
+      "condition": "custom",
+      "checks": {
+        "distance_matches_result": true,
+        "time_matches_result": true,
+        "first_motion_matches": true,
+        "result_matches_csv": true,
+        "odometry_hash_matches_audit": true,
+        "sample_count_matches": true,
+        "gt_zone_count_matches": true,
+        "nav2_yaml_hash_matches": true
+      },
+      "distance_recomputed_m": 37.20956497936753,
+      "duration_recomputed_s": 86.068,
+      "distance_delta_m": 7.105427357601002e-15,
+      "time_delta_s": 0.0,
+      "odometry_sha256": "d7bfc980a4432b4805b31d4f1c3ded87d9a50a6c9a8abeb932a4bdec2d492b22",
+      "recorded_gt_zone_samples": 0
+    },
+    {
+      "trial": "native_r05",
+      "condition": "native",
+      "checks": {
+        "distance_matches_result": true,
+        "time_matches_result": true,
+        "first_motion_matches": true,
+        "result_matches_csv": true,
+        "odometry_hash_matches_audit": true,
+        "sample_count_matches": true,
+        "gt_zone_count_matches": true,
+        "nav2_yaml_hash_matches": true
+      },
+      "distance_recomputed_m": 37.44395827565052,
+      "duration_recomputed_s": 86.63,
+      "distance_delta_m": 2.842170943040401e-14,
+      "time_delta_s": 0.0,
+      "odometry_sha256": "dc76475a402738279553c659c25c3d88ed32a1ccb374a615cec32a7d916e55b1",
+      "recorded_gt_zone_samples": 0
+    }
+  ],
+  "sample_sd_ddof": 1,
+  "recomputed_summary": {
+    "custom": {
+      "travel_distance_m": {
+        "mean": 37.299921050306196,
+        "sd": 0.1308550059001739
+      },
+      "travel_time_s": {
+        "mean": 86.35079999999999,
+        "sd": 0.32920388819088814
+      },
+      "accepted_to_terminal_s": {
+        "mean": 86.6,
+        "sd": 0.33911649915625985
+      }
+    },
+    "native": {
+      "travel_distance_m": {
+        "mean": 37.33938525779827,
+        "sd": 0.10265333076522021
+      },
+      "travel_time_s": {
+        "mean": 86.4302,
+        "sd": 0.2364364608092364
+      },
+      "accepted_to_terminal_s": {
+        "mean": 86.68,
+        "sd": 0.22803508501983177
+      }
+    }
+  },
+  "regional_costmap_check": [
+    {
+      "repeat": 1,
+      "regional_changed_cells": 0,
+      "whole_map_changed_cells": 118
+    },
+    {
+      "repeat": 2,
+      "regional_changed_cells": 0,
+      "whole_map_changed_cells": 118
+    },
+    {
+      "repeat": 3,
+      "regional_changed_cells": 0,
+      "whole_map_changed_cells": 250
+    },
+    {
+      "repeat": 4,
+      "regional_changed_cells": 0,
+      "whole_map_changed_cells": 756
+    },
+    {
+      "repeat": 5,
+      "regional_changed_cells": 0,
+      "whole_map_changed_cells": 509
+    }
+  ],
+  "identical_local_costmap_configuration": true,
+  "within_condition_configuration_identical": true,
+  "current_runner_matches_protocol": true,
+  "not_checked": [
+    "manuscript/rebuttal text",
+    "re-execution of Gazebo experiment",
+    "all external source/binary provenance",
+    "full dependency closure and redistribution licenses",
+    "continuous collision-free motion"
+  ],
+  "sources": [
+    {
+      "path": "runs/custom_r01/odometry.csv",
+      "sha256": "3a02857d91b6d9561e96ca0a0abb9cf5534e93d641412780af841b366f3d1455"
+    },
+    {
+      "path": "runs/native_r01/odometry.csv",
+      "sha256": "755628b299463c23407ddc6e24d9838cfa9e1121b821005703a4f8a814cc93aa"
+    },
+    {
+      "path": "runs/native_r02/odometry.csv",
+      "sha256": "f5b3634dc1bc2ad653320ac91313a88e9eaad84e7318b3152823e99eb413f6aa"
+    },
+    {
+      "path": "runs/custom_r02/odometry.csv",
+      "sha256": "c0728c1d35dee46017f8e5f0f2de6126046adf2b8713f811f1062f8a1d801316"
+    },
+    {
+      "path": "runs/custom_r03/odometry.csv",
+      "sha256": "2c4edc317963cc12e43f7df2f4e13829591ec97cd31e79a222420022832d7942"
+    },
+    {
+      "path": "runs/native_r03/odometry.csv",
+      "sha256": "5543eddafa7dce341c8bc1ab715bedb4c57a2cd4bdad4ae827855c0b300b2659"
+    },
+    {
+      "path": "runs/native_r04/odometry.csv",
+      "sha256": "8b69e3a36760dfd9b840b8fe44624ab91ede23745e52ac4ead7b6ac3a626a20e"
+    },
+    {
+      "path": "runs/custom_r04/odometry.csv",
+      "sha256": "9f2ba146b2507ee8b46335afaa7fcb453f03890442d9dde98044cf3562cd542f"
+    },
+    {
+      "path": "runs/custom_r05/odometry.csv",
+      "sha256": "d7bfc980a4432b4805b31d4f1c3ded87d9a50a6c9a8abeb932a4bdec2d492b22"
+    },
+    {
+      "path": "runs/native_r05/odometry.csv",
+      "sha256": "dc76475a402738279553c659c25c3d88ed32a1ccb374a615cec32a7d916e55b1"
+    },
+    {
+      "path": "trial_results.csv",
+      "sha256": "336804c0a6beef97cc4f58da3ea5460f6c23526c0e5ed99c15df87538077cd3f"
+    },
+    {
+      "path": "audit.json",
+      "sha256": "78ff19b7cd6a5d62f75e38ad8a2121a5a88be4e74b0ae841da7912a7823f11d9"
+    },
+    {
+      "path": "protocol.json",
+      "sha256": "b6a2c02bcf357c5a065df64ce3d4b0bf19a5f9a2d49d669bee56496f7e32f898"
+    },
+    {
+      "path": "summary.json",
+      "sha256": "8e2c646b6d47013580b95401779e5a23acf6bacf66264226c3e6c245397af778"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "condition": "native",
+  "zone_a": [
+    8.01,
+    -1.55,
+    23.96,
+    1.9
+  ],
+  "start": [
+    -0.2,
+    0.41,
+    0.0
+  ],
+  "goal": [
+    32.2,
+    0.41,
+    0.0
+  ],
+  "spawn_world": [
+    -16.2,
+    9.41,
+    0.01
+  ],
+  "seed": 42,
+  "ros_domain": "86",
+  "gazebo_master": "http://127.0.0.1:11386",
+  "ament_prefix_path": "<WORKSPACE>/install/turtlebot3:<WORKSPACE>/install/turtlebot3_teleop:<WORKSPACE>/install/turtlebot3_simulations:<WORKSPACE>/install/turtlebot3_bringup:<WORKSPACE>/install/turtlebot3_node:<WORKSPACE>/install/turtlebot3_navigation2:<WORKSPACE>/install/turtlebot3_manipulation_gazebo:<WORKSPACE>/install/turtlebot3_gazebo:<WORKSPACE>/install/turtlebot3_fake_node:<WORKSPACE>/install/turtlebot3_example:<WORKSPACE>/install/turtlebot3_description:<WORKSPACE>/install/turtlebot3_cartographer:<WORKSPACE>/install/policy_bridge:<WORKSPACE>/install/my_costmap_layers:<WORKSPACE>/install/message_pubsub:<WORKSPACE>/install/dynamixel_sdk_examples:<WORKSPACE>/install/dynamixel_sdk_custom_interfaces:<WORKSPACE>/install/dynamixel_sdk:/opt/ros/humble",
+  "prefixes": {
+    "turtlebot3_gazebo": "<WORKSPACE>/install/turtlebot3_gazebo",
+    "nav2_amcl": "/opt/ros/humble",
+    "nav2_costmap_2d": "/opt/ros/humble",
+    "my_costmap_layers": "<WORKSPACE>/install/my_costmap_layers"
+  },
+  "sha256": {
+    "<WORKSPACE>/src/turtlebot3/turtlebot3_navigation2/param/humble/waffle.yaml": "19c4c7f9ebcf87fc9567fa87de779d84188c4377d4c9fba0e78821d7016b2b61",
+    "<WORKSPACE>/src/turtlebot3_simulations/turtlebot3_gazebo/worlds/turtlebot3_factory_test1.world": "0a73e0538d6ce2161bb4037d2d5494de63f44687b6c3f3961eb34ce9540a3f5d",
+    "<USER_HOME>/map/factory6.yaml": "d06178432fee2a3d4f61c07e1f3c62fa94728383d3c41b1e680fd3d71389702a",
+    "<USER_HOME>/map/factory6.pgm": "c109725269775223c904c0627311acdbe2a98ed0d63765091b69f006492557b9",
+    "<EXPERIMENT_ROOT>/runs/native_r04/nav2_params.yaml": "1df65f88a852d32c27f6eebf0ef4aabe1176067ab7dc51e95f13009aec8b376e",
+    "<EXPERIMENT_ROOT>/run_comparison.py": "c56235cd043a0dde03d9bbbcae9b841db2e64e1c813ae740a38089f72dbd7538",
+    "<EXPERIMENT_ROOT>/reference_assets/models/turtlebot3_waffle/model.sdf": "0af10f2732cd9e994b67bb8865434dd06bc9826eaea69c1c49e6a5c1bf160843",
+    "<EXPERIMENT_ROOT>/reference_assets/urdf/turtlebot3_waffle.urdf": "df73b574adae9ce95dbf7659edaff0f4470ae1ccff93828c6f7c90d7b0a5df54",
+    "<EXPERIMENT_ROOT>/reference_provenance.json": "5e4907b161a5951c6ba70bc754d9746dcb233360d86eb139db7ef37b9ad92661",
+    "<WORKSPACE>/install/my_costmap_layers/lib/libmy_costmap_layers_library.so": "9b222e4624cb9a411a5930fda92bbcae2a5a49caafcb78328f59935ea0122d7d",
+    "<WORKSPACE>/src/my_costmap_layers/src/KeepoutCommandLayer.cpp": "8aa033290e9b30390eeed63c218aeeb2db87377a1da1a4ff2e0aa3a72fe2258c",
+    "<WORKSPACE>/src/my_costmap_layers/include/my_costmap_layers/ZoneGeometry.hpp": "48842268f57bfec899da1c1938afb7f1bd3ff0ac899d134b93ad216847bef39e",
+    "<WORKSPACE>/src/turtlebot3_simulations/turtlebot3_gazebo/models/turtlebot3_factory_world2/model.sdf": "7c4bf006130adefdc29e5b9d3dac37a52bb7a0dfef9134d60d877ae567328142",
+    "/opt/ros/humble/lib/libfilters.so": "3f1e1a428e38b68fcc3b9c10c55d79ed685407fbace4101100ea9bbb38bda2be",
+    "/opt/ros/humble/lib/liblayers.so": "2ae1dbd18918c2f3c6b58c82db9151c6dadc5413b8ea519ec0057403e999acdf",
+    "/opt/ros/humble/lib/libnav2_costmap_2d_core.so": "0bf46f92caa98e6b6ded74586b7c9e471cd6b0cb6ec194254d90c803c63d2b3a"
+  },
+  "measurement": "Main time: first odometry speed >0.01 m/s after accepted FollowWaypoints goal to terminal result callback, ROS simulation seconds. Distance: planar odometry displacements in the same interval. Acceptance-to-terminal time is also retained.",
+  "scope": "Task 1 fixed-policy native filter vs custom layer. No LLM, validator, or policy-bridge execution. No real robot. Local costmap unchanged; restriction global-only in BOTH conditions."
+}

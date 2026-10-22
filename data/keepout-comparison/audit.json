@@ -1,0 +1,303 @@
+{
+  "trials": [
+    {
+      "trial": "custom_r01",
+      "odometry_sha256": "3a02857d91b6d9561e96ca0a0abb9cf5534e93d641412780af841b366f3d1455",
+      "distance_recalculation_error_m": 0.0,
+      "time_recalculation_error_s": 0.0,
+      "runner_matches_frozen_protocol": true,
+      "correct_workspace_only": true,
+      "one_planner_and_amcl": true
+    },
+    {
+      "trial": "native_r01",
+      "odometry_sha256": "755628b299463c23407ddc6e24d9838cfa9e1121b821005703a4f8a814cc93aa",
+      "distance_recalculation_error_m": 0.0,
+      "time_recalculation_error_s": 0.0,
+      "runner_matches_frozen_protocol": true,
+      "correct_workspace_only": true,
+      "one_planner_and_amcl": true
+    },
+    {
+      "trial": "native_r02",
+      "odometry_sha256": "f5b3634dc1bc2ad653320ac91313a88e9eaad84e7318b3152823e99eb413f6aa",
+      "distance_recalculation_error_m": 0.0,
+      "time_recalculation_error_s": 0.0,
+      "runner_matches_frozen_protocol": true,
+      "correct_workspace_only": true,
+      "one_planner_and_amcl": true
+    },
+    {
+      "trial": "custom_r02",
+      "odometry_sha256": "c0728c1d35dee46017f8e5f0f2de6126046adf2b8713f811f1062f8a1d801316",
+      "distance_recalculation_error_m": 0.0,
+      "time_recalculation_error_s": 0.0,
+      "runner_matches_frozen_protocol": true,
+      "correct_workspace_only": true,
+      "one_planner_and_amcl": true
+    },
+    {
+      "trial": "custom_r03",
+      "odometry_sha256": "2c4edc317963cc12e43f7df2f4e13829591ec97cd31e79a222420022832d7942",
+      "distance_recalculation_error_m": 0.0,
+      "time_recalculation_error_s": 0.0,
+      "runner_matches_frozen_protocol": true,
+      "correct_workspace_only": true,
+      "one_planner_and_amcl": true
+    },
+    {
+      "trial": "native_r03",
+      "odometry_sha256": "5543eddafa7dce341c8bc1ab715bedb4c57a2cd4bdad4ae827855c0b300b2659",
+      "distance_recalculation_error_m": 0.0,
+      "time_recalculation_error_s": 0.0,
+      "runner_matches_frozen_protocol": true,
+      "correct_workspace_only": true,
+      "one_planner_and_amcl": true
+    },
+    {
+      "trial": "native_r04",
+      "odometry_sha256": "8b69e3a36760dfd9b840b8fe44624ab91ede23745e52ac4ead7b6ac3a626a20e",
+      "distance_recalculation_error_m": 0.0,
+      "time_recalculation_error_s": 0.0,
+      "runner_matches_frozen_protocol": true,
+      "correct_workspace_only": true,
+      "one_planner_and_amcl": true
+    },
+    {
+      "trial": "custom_r04",
+      "odometry_sha256": "9f2ba146b2507ee8b46335afaa7fcb453f03890442d9dde98044cf3562cd542f",
+      "distance_recalculation_error_m": 0.0,
+      "time_recalculation_error_s": 0.0,
+      "runner_matches_frozen_protocol": true,
+      "correct_workspace_only": true,
+      "one_planner_and_amcl": true
+    },
+    {
+      "trial": "custom_r05",
+      "odometry_sha256": "d7bfc980a4432b4805b31d4f1c3ded87d9a50a6c9a8abeb932a4bdec2d492b22",
+      "distance_recalculation_error_m": 0.0,
+      "time_recalculation_error_s": 0.0,
+      "runner_matches_frozen_protocol": true,
+      "correct_workspace_only": true,
+      "one_planner_and_amcl": true
+    },
+    {
+      "trial": "native_r05",
+      "odometry_sha256": "dc76475a402738279553c659c25c3d88ed32a1ccb374a615cec32a7d916e55b1",
+      "distance_recalculation_error_m": 0.0,
+      "time_recalculation_error_s": 0.0,
+      "runner_matches_frozen_protocol": true,
+      "correct_workspace_only": true,
+      "one_planner_and_amcl": true
+    }
+  ],
+  "unique_odometry_files": 10,
+  "tracked_source_variants": {
+    "<WORKSPACE>/src/turtlebot3/turtlebot3_navigation2/param/humble/waffle.yaml": [
+      "19c4c7f9ebcf87fc9567fa87de779d84188c4377d4c9fba0e78821d7016b2b61"
+    ],
+    "<WORKSPACE>/src/turtlebot3_simulations/turtlebot3_gazebo/worlds/turtlebot3_factory_test1.world": [
+      "0a73e0538d6ce2161bb4037d2d5494de63f44687b6c3f3961eb34ce9540a3f5d"
+    ],
+    "<USER_HOME>/map/factory6.yaml": [
+      "d06178432fee2a3d4f61c07e1f3c62fa94728383d3c41b1e680fd3d71389702a"
+    ],
+    "<USER_HOME>/map/factory6.pgm": [
+      "c109725269775223c904c0627311acdbe2a98ed0d63765091b69f006492557b9"
+    ],
+    "<EXPERIMENT_ROOT>/run_comparison.py": [
+      "c56235cd043a0dde03d9bbbcae9b841db2e64e1c813ae740a38089f72dbd7538"
+    ],
+    "<EXPERIMENT_ROOT>/reference_assets/models/turtlebot3_waffle/model.sdf": [
+      "0af10f2732cd9e994b67bb8865434dd06bc9826eaea69c1c49e6a5c1bf160843"
+    ],
+    "<EXPERIMENT_ROOT>/reference_assets/urdf/turtlebot3_waffle.urdf": [
+      "df73b574adae9ce95dbf7659edaff0f4470ae1ccff93828c6f7c90d7b0a5df54"
+    ],
+    "<EXPERIMENT_ROOT>/reference_provenance.json": [
+      "5e4907b161a5951c6ba70bc754d9746dcb233360d86eb139db7ef37b9ad92661"
+    ],
+    "<WORKSPACE>/install/my_costmap_layers/lib/libmy_costmap_layers_library.so": [
+      "9b222e4624cb9a411a5930fda92bbcae2a5a49caafcb78328f59935ea0122d7d"
+    ],
+    "<WORKSPACE>/src/my_costmap_layers/src/KeepoutCommandLayer.cpp": [
+      "8aa033290e9b30390eeed63c218aeeb2db87377a1da1a4ff2e0aa3a72fe2258c"
+    ],
+    "<WORKSPACE>/src/my_costmap_layers/include/my_costmap_layers/ZoneGeometry.hpp": [
+      "48842268f57bfec899da1c1938afb7f1bd3ff0ac899d134b93ad216847bef39e"
+    ],
+    "<WORKSPACE>/src/turtlebot3_simulations/turtlebot3_gazebo/models/turtlebot3_factory_world2/model.sdf": [
+      "7c4bf006130adefdc29e5b9d3dac37a52bb7a0dfef9134d60d877ae567328142"
+    ],
+    "/opt/ros/humble/lib/libfilters.so": [
+      "3f1e1a428e38b68fcc3b9c10c55d79ed685407fbace4101100ea9bbb38bda2be"
+    ],
+    "/opt/ros/humble/lib/liblayers.so": [
+      "2ae1dbd18918c2f3c6b58c82db9151c6dadc5413b8ea519ec0057403e999acdf"
+    ],
+    "/opt/ros/humble/lib/libnav2_costmap_2d_core.so": [
+      "0bf46f92caa98e6b6ded74586b7c9e471cd6b0cb6ec194254d90c803c63d2b3a"
+    ]
+  },
+  "configuration_differences": [
+    {
+      "path": ".global_costmap.global_costmap.ros__parameters.filter_inflation",
+      "custom": null,
+      "native": {
+        "plugin": "nav2_costmap_2d::InflationLayer",
+        "cost_scaling_factor": 3.0,
+        "inflation_radius": 1.3
+      }
+    },
+    {
+      "path": ".global_costmap.global_costmap.ros__parameters.filters",
+      "custom": null,
+      "native": [
+        "native_keepout",
+        "filter_inflation"
+      ]
+    },
+    {
+      "path": ".global_costmap.global_costmap.ros__parameters.keepout_command_layer",
+      "custom": {
+        "plugin": "my_costmap_layers::KeepoutCommandLayer",
+        "enabled": true,
+        "forbidden_zones_topic": "/forbidden_zones_update",
+        "zone_geometry_topic": "/zone_geometry_update"
+      },
+      "native": null
+    },
+    {
+      "path": ".global_costmap.global_costmap.ros__parameters.native_keepout",
+      "custom": null,
+      "native": {
+        "plugin": "nav2_costmap_2d::KeepoutFilter",
+        "enabled": true,
+        "filter_info_topic": "/r24_filter_info",
+        "transform_tolerance": 0.1
+      }
+    },
+    {
+      "path": ".global_costmap.global_costmap.ros__parameters.plugins",
+      "custom": [
+        "static_layer",
+        "obstacle_layer",
+        "voxel_layer",
+        "keepout_command_layer",
+        "zone_softcost_layer",
+        "object_avoidance_layer",
+        "inflation_layer"
+      ],
+      "native": [
+        "static_layer",
+        "obstacle_layer",
+        "voxel_layer",
+        "zone_softcost_layer",
+        "object_avoidance_layer",
+        "inflation_layer"
+      ]
+    }
+  ],
+  "only_expected_global_backend_differences": true,
+  "all_static_source_hashes_consistent": true,
+  "summary": "Distinct recorded runs, identical frozen source files, and original CSV-to-result reproduction are checked separately from navigation performance.",
+  "native_custom_blocked_zone_and_halo_comparison": [
+    {
+      "display_repeat": 1,
+      "zone_plus_inflation_cells": 45384,
+      "different_cells": 0,
+      "whole_map_different_cells": 118
+    },
+    {
+      "display_repeat": 2,
+      "zone_plus_inflation_cells": 45384,
+      "different_cells": 0,
+      "whole_map_different_cells": 118
+    },
+    {
+      "display_repeat": 3,
+      "zone_plus_inflation_cells": 45384,
+      "different_cells": 0,
+      "whole_map_different_cells": 250
+    },
+    {
+      "display_repeat": 4,
+      "zone_plus_inflation_cells": 45384,
+      "different_cells": 0,
+      "whole_map_different_cells": 756
+    },
+    {
+      "display_repeat": 5,
+      "zone_plus_inflation_cells": 45384,
+      "different_cells": 0,
+      "whole_map_different_cells": 509
+    }
+  ],
+  "world_model_provenance": [
+    {
+      "model": "ClutteringC_01",
+      "in_archive": true,
+      "archive_sdf_match": true
+    },
+    {
+      "model": "ClutteringD_01",
+      "in_archive": true,
+      "archive_sdf_match": true
+    },
+    {
+      "model": "OrangeBarrier",
+      "in_archive": true,
+      "archive_sdf_match": true
+    },
+    {
+      "model": "bucket_01",
+      "in_archive": true,
+      "archive_sdf_match": true
+    },
+    {
+      "model": "charging_station",
+      "in_archive": true,
+      "archive_sdf_match": true
+    },
+    {
+      "model": "ground_plane",
+      "in_archive": false,
+      "archive_sdf_match": null
+    },
+    {
+      "model": "mobile_pallet",
+      "in_archive": true,
+      "archive_sdf_match": true
+    },
+    {
+      "model": "mobile_pallet2",
+      "in_archive": true,
+      "archive_sdf_match": true
+    },
+    {
+      "model": "pallet",
+      "in_archive": true,
+      "archive_sdf_match": true
+    },
+    {
+      "model": "shelf_big2",
+      "in_archive": true,
+      "archive_sdf_match": true
+    },
+    {
+      "model": "sun",
+      "in_archive": false,
+      "archive_sdf_match": null
+    },
+    {
+      "model": "treshcan",
+      "in_archive": true,
+      "archive_sdf_match": true
+    },
+    {
+      "model": "turtlebot3_factory_world2",
+      "in_archive": true,
+      "archive_sdf_match": true
+    }
+  ]
+}

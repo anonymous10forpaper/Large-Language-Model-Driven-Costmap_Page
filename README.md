@@ -81,3 +81,21 @@ Embedded Lucide icons are covered by `assets/benchmark-icons-LICENSE`.
 The **Rule-based baseline code** link opens the runtime repository's
 `policy_bridge/evaluation/` folder, which contains the actual v4 paper
 baseline, its v3 helper dependency, and standalone execution instructions.
+
+## Keepout Comparison
+
+The **Keepout Comparison** menu opens `keepout-comparison.html`, an English-only
+summary of five custom-layer and five native-filter trials. Recorded metrics,
+protocol, anonymized configuration files, odometry, and costmap snapshots are
+available in `data/keepout-comparison/` and `downloads/keepout-evidence.zip`.
+Costmap figures are not displayed.
+
+Recalculate recorded metrics and check source-artifact hashes with:
+
+```bash
+python3 tools/verify_keepout.py
+```
+
+See `data/keepout-comparison/README.txt` for metric definitions, anonymization,
+and verification scope. This evidence release is not a full simulator rerun
+package and does not claim independent experimental replication.
