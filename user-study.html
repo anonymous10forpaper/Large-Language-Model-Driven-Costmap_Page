@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Participant instructions, task briefs, and 80 English commands from the Policy Bridge non-expert study.">
+  <title>Non-expert command study | Policy Bridge</title>
+  <link rel="canonical" href="https://anonymous10forpaper.github.io/Large-Language-Model-Driven-Costmap_Page/user-study.html">
+  <meta property="og:title" content="Non-expert command study | Policy Bridge">
+  <meta property="og:description" content="Study map, participant instructions, and 80 participant-authored commands across eight navigation policy tasks.">
+  <meta property="og:type" content="website">
+  <!-- Paper subset source SHA-256: b3b2f1c5a776ff5776b0770c96ae04ac246313db4458b4f0deefecec996845fe. Command text is reproduced without rewriting. -->
+  <style>
+    :root { color-scheme: light; --ink:#202c35; --muted:#63717d; --line:#dce3e8; --blue:#2c67be; --teal:#087b70; --paper:#fff; --wash:#f5f7f9; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:88px; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:15px/1.65 "Segoe UI",Arial,sans-serif; letter-spacing:0; -webkit-font-smoothing:antialiased; }
+    button,a,summary { -webkit-tap-highlight-color:transparent; }
+    button { font:inherit; cursor:pointer; }
+    a { color:inherit; text-decoration:none; }
+    button:focus-visible,a:focus-visible,summary:focus-visible { outline:3px solid #2c67be; outline-offset:4px; }
+    h1,h2,h3,h4,p,figure,blockquote { margin:0; }
+    h1,h2,h3,h4 { line-height:1.25; }
+    .shell { width:min(1120px,calc(100% - 64px)); margin-inline:auto; }
+    .site-header { height:66px; border-bottom:1px solid var(--line); background:#fffffff5; position:sticky; top:0; z-index:10; }
+    .header-inner { height:100%; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { display:flex; align-items:center; gap:11px; font-size:15px; font-weight:700; white-space:nowrap; }
+    .brand-mark { display:grid; place-items:center; height:34px; width:34px; background:#3376d1; color:#fff; border-radius:6px; font-size:13px; }
+    nav { display:flex; gap:27px; font-size:13px; color:#52606c; font-weight:600; }
+    nav a:hover { color:var(--blue); }
+    nav a[aria-current="page"] { color:var(--blue); border-bottom:2px solid var(--blue); padding-bottom:4px; }
+    .short-label { display:none; }
+    .intro { padding:38px 0 30px; border-bottom:1px solid var(--line); display:flex; align-items:flex-end; justify-content:space-between; gap:24px; }
+    .eyebrow { font-size:11px; font-weight:700; color:var(--teal); margin-bottom:9px; text-transform:uppercase; }
+    h1 { font-size:34px; font-weight:650; margin-bottom:10px; }
+    .subtitle { color:var(--muted); font-size:15px; max-width:650px; }
+    .study-counts { display:flex; gap:23px; flex-shrink:0; padding-bottom:3px; }
+    .study-counts div { display:flex; flex-direction:column; }
+    .study-counts strong { font-size:25px; font-weight:600; line-height:1.2; }
+    .study-counts span { color:var(--muted); font-size:12px; }
+    .section { padding:30px 0; }
+    .section-heading { display:flex; gap:12px; align-items:baseline; margin-bottom:21px; }
+    .section-index { color:var(--teal); font-size:12px; font-weight:700; min-width:22px; }
+    h2 { font-size:22px; font-weight:650; }
+    .map-grid { display:grid; grid-template-columns:minmax(0,1.55fr) minmax(280px,1fr); align-items:start; gap:36px; }
+    .study-map { width:100%; height:auto; display:block; aspect-ratio:1676/1072; object-fit:contain; border:1px solid var(--line); background:#fff; border-radius:3px; }
+    figcaption { display:flex; align-items:center; justify-content:space-between; gap:12px; color:var(--muted); font-size:12px; margin-top:10px; }
+    .text-button { display:inline-flex; align-items:center; justify-content:center; gap:7px; color:var(--blue); padding:5px 0; background:transparent; border:0; white-space:nowrap; font-size:12px; font-weight:600; }
+    svg { width:18px; height:18px; flex-shrink:0; vertical-align:middle; }
+    .concepts { margin:0; font-size:13px; }
+    .concepts > div { display:grid; grid-template-columns:100px minmax(0,1fr); gap:12px; padding:10px 0; border-bottom:1px solid var(--line); }
+    .concepts > div:first-child { padding-top:0; }
+    .concepts > div:last-child { border-bottom:0; }
+    dt { font-weight:650; }
+    dd { margin:0; color:var(--muted); line-height:1.5; }
+    code { font:0.94em ui-monospace,SFMono-Regular,Consolas,monospace; overflow-wrap:anywhere; }
+    .instructions { border-block:1px solid var(--line); background:var(--wash); }
+    .instruction-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px 38px; padding:0; margin:0; list-style:none; counter-reset:instruction; }
+    .instruction-grid li { display:grid; grid-template-columns:22px minmax(0,1fr); gap:10px; font-size:14px; counter-increment:instruction; }
+    .instruction-grid li::before { content:counter(instruction,decimal-leading-zero); color:var(--muted); font-size:11px; font-weight:650; padding-top:2px; }
+    .instruction-grid strong { font-weight:650; }
+    .tasks-section { padding-top:38px; padding-bottom:42px; }
+    .tasks-heading { display:flex; justify-content:space-between; align-items:center; gap:15px; margin-bottom:22px; }
+    .tasks-heading .section-heading { margin:0; }
+    .toggle-all { border:1px solid var(--line); background:white; color:#485762; padding:6px 12px; border-radius:4px; font-size:12px; font-weight:600; min-width:105px; min-height:34px; }
+    .toggle-all:hover { border-color:#9aaab7; background:var(--wash); }
+    .category + .category { margin-top:30px; }
+    .category-header { display:flex; gap:13px; align-items:center; margin-bottom:14px; }
+    .category-number { align-self:stretch; display:flex; align-items:center; color:var(--blue); padding-right:12px; border-right:3px solid #a7c3e7; font-size:15px; font-weight:600; }
+    .category-02 .category-number { color:#99712d; border-right-color:#d8b67d; }
+    .category-03 .category-number { color:#b15c52; border-right-color:#dda49d; }
+    h3 { font-size:18px; font-weight:650; }
+    .category-header p { color:var(--muted); font-size:13px; margin-top:4px; }
+    .category-total { margin-left:auto; white-space:nowrap; color:var(--muted); font-size:12px; }
+    .task-list { border-top:1px solid var(--line); }
+    .task { border-bottom:1px solid var(--line); }
+    summary { list-style:none; display:grid; grid-template-columns:35px minmax(0,1fr) 90px 20px; gap:13px; align-items:center; padding:18px 12px; cursor:pointer; }
+    summary::-webkit-details-marker { display:none; }
+    summary:hover { background:#f8fafb; }
+    .task[open] > summary { background:#f1f5fa; }
+    .task-id { font:600 12px ui-monospace,SFMono-Regular,Consolas,monospace; color:var(--blue); }
+    .task-title { display:block; font-size:15px; font-weight:650; }
+    .requirements { display:flex; flex-wrap:wrap; column-gap:17px; row-gap:3px; margin-top:5px; font-size:12px; color:#455767; }
+    .requirements span { overflow-wrap:anywhere; }
+    .requirements b { font-weight:400; color:#72808a; margin-right:5px; }
+    .response-count { color:var(--muted); font-size:12px; text-align:right; white-space:nowrap; }
+    .chevron { display:grid; place-items:center; color:#647787; transition:transform .18s ease; }
+    .task[open] .chevron { transform:rotate(180deg); }
+    .responses { padding:0 22px 12px 60px; border-left:2px solid #a7c3e7; }
+    .response-heading { display:flex; gap:14px; align-items:center; justify-content:space-between; padding:18px 0 12px; border-bottom:1px solid var(--line); }
+    h4 { font-size:12px; font-weight:650; color:#536575; }
+    .response-heading > span { color:#7e8b95; font-size:11px; }
+    .command-list { padding:0; margin:0; list-style:none; }
+    .command-list li { display:grid; grid-template-columns:105px minmax(0,1fr); gap:18px; padding:12px 0; border-bottom:1px solid #edf0f2; }
+    .command-list li:last-child { border:0; }
+    .participant { font-size:11px; color:#71818e; padding-top:3px; }
+    blockquote { font-size:14px; line-height:1.65; overflow-wrap:anywhere; }
+    .submission-note { margin-top:27px; border-left:3px solid #91b4ab; padding:2px 0 2px 14px; font-size:13px; color:#52666a; }
+    footer { border-top:1px solid var(--line); color:var(--muted); padding:22px 0 30px; font-size:12px; }
+    .footer-inner { display:flex; justify-content:space-between; gap:20px; }
+    dialog { width:min(1150px,calc(100% - 32px)); max-height:94vh; padding:16px; border:1px solid var(--line); border-radius:6px; color:var(--ink); }
+    dialog::backdrop { background:#192126aa; }
+    .dialog-heading { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; font-size:15px; font-weight:650; }
+    .icon-button { display:grid; place-items:center; width:36px; height:36px; border:1px solid var(--line); border-radius:4px; background:white; color:#485762; }
+    dialog img { display:block; width:100%; max-height:calc(94vh - 100px); object-fit:contain; }
+    .skip-link { position:fixed; top:-100px; left:16px; background:white; padding:8px 14px; z-index:30; }
+    .skip-link:focus { top:8px; }
+    @media (max-width:900px) {
+      .intro { align-items:flex-start; flex-direction:column; gap:20px; }
+      .study-counts { gap:35px; }
+      .study-counts div { flex-direction:row; align-items:baseline; gap:7px; }
+      .study-counts strong { font-size:20px; }
+      .map-grid { grid-template-columns:1fr; gap:22px; }
+      .map-grid figure { max-width:730px; }
+      .concepts { display:grid; grid-template-columns:1fr 1fr; gap:0 28px; }
+      .concepts > div:first-child { padding-top:10px; }
+      .concepts > div { grid-template-columns:90px minmax(0,1fr); }
+    }
+    @media (max-width:600px) {
+      .shell { width:calc(100% - 32px); }
+      .site-header { height:58px; }
+      .brand { gap:8px; font-size:13px; }
+      .brand-mark { width:30px; height:30px; font-size:11px; }
+      nav { gap:14px; font-size:12px; }
+      nav a[href="#instructions"] { display:none; }
+      nav a[href="#map"], .full-label { display:none; }
+      .short-label { display:inline; }
+      .intro { padding:27px 0 24px; }
+      h1 { font-size:28px; }
+      .subtitle { font-size:14px; }
+      .study-counts { flex-wrap:wrap; gap:13px 23px; }
+      .section { padding:25px 0; }
+      h2 { font-size:20px; }
+      .section-heading { margin-bottom:17px; }
+      .concepts { display:block; }
+      .concepts > div { grid-template-columns:104px minmax(0,1fr); }
+      .instruction-grid { grid-template-columns:1fr; gap:15px; }
+      .category-header { gap:10px; }
+      h3 { font-size:16px; }
+      .category-header p { font-size:12px; }
+      .category-total { display:none; }
+      .tasks-heading { align-items:flex-start; }
+      .tasks-heading h2 { font-size:19px; }
+      .tasks-heading .section-index { display:none; }
+      .toggle-all { padding:5px 9px; min-width:95px; }
+      summary { grid-template-columns:26px minmax(0,1fr) 18px; gap:8px; padding:16px 4px; }
+      .response-count { display:none; }
+      .task-title { font-size:14px; }
+      .requirements { font-size:12px; gap:4px 12px; }
+      .responses { padding:0 10px 6px 15px; }
+      .command-list li { grid-template-columns:1fr; gap:3px; padding:11px 0; }
+      .participant { padding-top:0; }
+      blockquote { font-size:13px; }
+      .footer-inner { flex-direction:column; gap:5px; }
+    }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .chevron { transition:none; } }
+    @media (max-width:600px) { .header-inner { gap:10px; } .header-inner .brand>span:last-child { display:none; } .header-inner nav { gap:14px; font-size:12px; } }
+    @media print { .site-header,button,dialog { display:none; } .shell { width:100%; } details { break-inside:avoid; } .intro { padding-top:0; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="shell header-inner">
+    <a href="index.html" class="brand" aria-label="Policy Bridge project home"><span class="brand-mark">PB</span><span>Policy Bridge</span></a>
+    <nav aria-label="Project navigation"><a href="index.html">Project</a><a href="user-study.html" aria-current="page">User Study</a><a href="benchmark.html">Benchmark</a></nav>
+  </div></header>
+  <main id="main">
+    <div class="shell intro"><div><p class="eyebrow">Non-expert evaluation</p><h1>Non-expert command study</h1>
+      <p class="subtitle">From navigation requirements to participants' own words.</p></div>
+      <div class="study-counts" aria-label="Study dataset"><div><strong>10</strong><span>participants</span></div><div><strong>8</strong><span>tasks</span></div><div><strong>80</strong><span>commands</span></div></div>
+    </div>
+    <section id="map" class="shell section" aria-labelledby="map-heading">
+      <div class="section-heading"><span class="section-index">01</span><h2 id="map-heading">Study map &amp; task concepts</h2></div>
+      <div class="map-grid"><figure><img class="study-map" src="assets/study-map-factory6.png" width="1676" height="1072" alt="Factory6 map from Policy Bridge: WP1 and WP2 beside Zone A, WP3 and WP4 beside Zone B, WP5 and WP6 beside Zone D, and WP7 and WP8 beside Zone E.">
+        <figcaption><span>Waypoints WP1&ndash;WP8 &middot; Zones A&ndash;E</span><button class="text-button" id="open-map" type="button" aria-haspopup="dialog"><!-- @license lucide-static v0.468.0 - ISC -->
+<svg aria-hidden="true" focusable="false"
+  class="lucide lucide-maximize-2"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <polyline points="15 3 21 3 21 9" />
+  <polyline points="9 21 3 21 3 15" />
+  <line x1="21" x2="14" y1="3" y2="10" />
+  <line x1="3" x2="10" y1="21" y2="14" />
+</svg>
+ Full map</button></figcaption></figure>
+        <dl class="concepts">
+          <div><dt>Waypoint (WP)</dt><dd>A destination or a stop to visit in a specified order.</dd></div>
+          <div><dt>Zone</dt><dd>A named region where access, traversal costs, or conditional rules apply.</dd></div>
+          <div><dt>Keepout</dt><dd>A rule that prevents the robot from entering a specified zone.</dd></div>
+          <div><dt>Zone cost</dt><dd>A value from 0 to 252. Higher values make a zone less preferred; a cost is not a keepout.</dd></div>
+          <div><dt>Person avoidance</dt><dd>Maintain the system's default safety distance from detected people.</dd></div>
+          <div><dt>Time condition</dt><dd>Apply a rule for a specified duration, starting now.</dd></div>
+          <div><dt>Event condition</dt><dd>Apply a different rule while an external signal, such as <code>fire_alarm</code>, is active.</dd></div>
+        </dl>
+      </div>
+    </section>
+    <section id="instructions" class="instructions section" aria-labelledby="instructions-heading"><div class="shell">
+      <div class="section-heading"><span class="section-index">02</span><h2 id="instructions-heading">Participant instructions</h2></div>
+      <ol class="instruction-grid">
+        <li><span><strong>Write one English natural-language command for each task.</strong> Include every requirement listed in the task brief.</span></li>
+        <li><span><strong>Use your own wording.</strong> There is no fixed sentence template. A command may contain one sentence or multiple clauses; do not write JSON or program syntax.</span></li>
+        <li><span><strong>You may ask about task meanings or map locations.</strong> Researchers will not suggest English wording or correct your sentences.</span></li>
+        <li><span><strong>Submit all commands before receiving model or GUI feedback.</strong> No example commands or policy JSON are provided during command writing.</span></li>
+      </ol>
+    </div></section>
+    <section id="tasks" class="shell tasks-section" aria-labelledby="tasks-heading">
+      <header class="tasks-heading"><div class="section-heading"><span class="section-index">03</span><h2 id="tasks-heading">Task briefs &amp; participant commands</h2></div><button type="button" class="toggle-all" id="toggle-all">Expand all</button></header>
+      <section class="category category-01" aria-labelledby="category-01">
+          <header class="category-header"><span class="category-number">01</span><div><h3 id="category-01">Single-constraint policies</h3><p>A destination with one policy requirement.</p></div><span class="category-total">3 tasks</span></header>
+          <div class="task-list"><details class="task" id="t1">
+              <summary><span class="task-id">T1</span><span class="task-brief"><span class="task-title">Keepout zone</span>
+                <span class="requirements"><span><b>Destination</b> WP2</span><span><b>Keepout</b> Zone A</span></span>
+              </span><span class="response-count">10 commands</span><span class="chevron"><!-- @license lucide-static v0.468.0 - ISC -->
+<svg aria-hidden="true" focusable="false"
+  class="lucide lucide-chevron-down"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m6 9 6 6 6-6" />
+</svg>
+</span></summary>
+              <div class="responses"><div class="response-heading"><h4>Participant commands</h4><span>T1 / P01&ndash;P10</span></div>
+              <ol class="command-list"><li data-command-id="P01-T1"><span class="participant">Participant 01</span><blockquote><p>Go to WP2, but don&#x27;t take a route through Zone A.</p></blockquote></li><li data-command-id="P02-T1"><span class="participant">Participant 02</span><blockquote><p>Please take the robot to WP2 without entering Zone A.</p></blockquote></li><li data-command-id="P03-T1"><span class="participant">Participant 03</span><blockquote><p>Can the robot reach WP2 without going into Zone A?</p></blockquote></li><li data-command-id="P04-T1"><span class="participant">Participant 04</span><blockquote><p>Navigate to WP2 with Zone A excluded from the available route.</p></blockquote></li><li data-command-id="P05-T1"><span class="participant">Participant 05</span><blockquote><p>Go to WP2, but do not go inside Zone A.</p></blockquote></li><li data-command-id="P06-T1"><span class="participant">Participant 06</span><blockquote><p>Make sure WP2 is reached without the robot crossing into Zone A.</p></blockquote></li><li data-command-id="P07-T1"><span class="participant">Participant 07</span><blockquote><p>WP2 is the destination. Leave Zone A out of the route.</p></blockquote></li><li data-command-id="P08-T1"><span class="participant">Participant 08</span><blockquote><p>Let&#x27;s get the robot to WP2, just not through Zone A.</p></blockquote></li><li data-command-id="P09-T1"><span class="participant">Participant 09</span><blockquote><p>Plan the route to WP2 so that Zone A is not included.</p></blockquote></li><li data-command-id="P10-T1"><span class="participant">Participant 10</span><blockquote><p>I want the robot to go to WP2 and stay outside Zone A.</p></blockquote></li></ol></div>
+            </details><details class="task" id="t2">
+              <summary><span class="task-id">T2</span><span class="task-brief"><span class="task-title">Single-zone cost</span>
+                <span class="requirements"><span><b>Destination</b> WP3</span><span><b>Zone B cost</b> 200</span></span>
+              </span><span class="response-count">10 commands</span><span class="chevron"><!-- @license lucide-static v0.468.0 - ISC -->
+<svg aria-hidden="true" focusable="false"
+  class="lucide lucide-chevron-down"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m6 9 6 6 6-6" />
+</svg>
+</span></summary>
+              <div class="responses"><div class="response-heading"><h4>Participant commands</h4><span>T2 / P01&ndash;P10</span></div>
+              <ol class="command-list"><li data-command-id="P01-T2"><span class="participant">Participant 01</span><blockquote><p>Head for WP3 and set Zone B&#x27;s cost to 200.</p></blockquote></li><li data-command-id="P02-T2"><span class="participant">Participant 02</span><blockquote><p>Could you set the cost of Zone B to 200 and then proceed to WP3?</p></blockquote></li><li data-command-id="P03-T2"><span class="participant">Participant 03</span><blockquote><p>Set Zone B to cost 200, and go to WP3 after that.</p></blockquote></li><li data-command-id="P04-T2"><span class="participant">Participant 04</span><blockquote><p>Assign a traversal cost of 200 to Zone B and set WP3 as the destination.</p></blockquote></li><li data-command-id="P05-T2"><span class="participant">Participant 05</span><blockquote><p>Please make Zone B cost 200 and move to WP3.</p></blockquote></li><li data-command-id="P06-T2"><span class="participant">Participant 06</span><blockquote><p>The robot should travel to WP3, and Zone B should have a cost setting of 200.</p></blockquote></li><li data-command-id="P07-T2"><span class="participant">Participant 07</span><blockquote><p>Go to WP3; Zone B cost should be 200.</p></blockquote></li><li data-command-id="P08-T2"><span class="participant">Participant 08</span><blockquote><p>Set Zone B&#x27;s cost at 200, then have it make its way to WP3.</p></blockquote></li><li data-command-id="P09-T2"><span class="participant">Participant 09</span><blockquote><p>Use 200 as the cost for Zone B when planning the trip to WP3.</p></blockquote></li><li data-command-id="P10-T2"><span class="participant">Participant 10</span><blockquote><p>Have it travel to WP3, with the Zone B cost set to 200.</p></blockquote></li></ol></div>
+            </details><details class="task" id="t3">
+              <summary><span class="task-id">T3</span><span class="task-brief"><span class="task-title">Person avoidance</span>
+                <span class="requirements"><span><b>Destination</b> WP8</span><span><b>People</b> Maintain the default safety distance</span></span>
+              </span><span class="response-count">10 commands</span><span class="chevron"><!-- @license lucide-static v0.468.0 - ISC -->
+<svg aria-hidden="true" focusable="false"
+  class="lucide lucide-chevron-down"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m6 9 6 6 6-6" />
+</svg>
+</span></summary>
+              <div class="responses"><div class="response-heading"><h4>Participant commands</h4><span>T3 / P01&ndash;P10</span></div>
+              <ol class="command-list"><li data-command-id="P01-T3"><span class="participant">Participant 01</span><blockquote><p>Get to WP8 while keeping a safe distance from people.</p></blockquote></li><li data-command-id="P02-T3"><span class="participant">Participant 02</span><blockquote><p>Please go to WP8 and maintain the normal safety distance from people.</p></blockquote></li><li data-command-id="P03-T3"><span class="participant">Participant 03</span><blockquote><p>Go to WP8, and make sure it doesn&#x27;t get too close to anyone.</p></blockquote></li><li data-command-id="P04-T3"><span class="participant">Participant 04</span><blockquote><p>Proceed to WP8 while applying the standard person-avoidance distance.</p></blockquote></li><li data-command-id="P05-T3"><span class="participant">Participant 05</span><blockquote><p>Move to WP8 and avoid people with a safe distance.</p></blockquote></li><li data-command-id="P06-T3"><span class="participant">Participant 06</span><blockquote><p>While moving to WP8, keep the robot at the system&#x27;s usual safe distance from any detected person.</p></blockquote></li><li data-command-id="P07-T3"><span class="participant">Participant 07</span><blockquote><p>Reach WP8 and keep clear of people.</p></blockquote></li><li data-command-id="P08-T3"><span class="participant">Participant 08</span><blockquote><p>It needs to end up at WP8, and it should give people enough space.</p></blockquote></li><li data-command-id="P09-T3"><span class="participant">Participant 09</span><blockquote><p>The route should end at WP8 and allow enough clearance around people.</p></blockquote></li><li data-command-id="P10-T3"><span class="participant">Participant 10</span><blockquote><p>The destination is WP8. Please avoid people on the way.</p></blockquote></li></ol></div>
+            </details></div></section>
+<section class="category category-02" aria-labelledby="category-02">
+          <header class="category-header"><span class="category-number">02</span><div><h3 id="category-02">Compositional policies</h3><p>An ordered route or multiple policy requirements.</p></div><span class="category-total">3 tasks</span></header>
+          <div class="task-list"><details class="task" id="t4">
+              <summary><span class="task-id">T4</span><span class="task-brief"><span class="task-title">Two-zone costs</span>
+                <span class="requirements"><span><b>Destination</b> WP3</span><span><b>Zone A cost</b> 5</span><span><b>Zone B cost</b> 200</span></span>
+              </span><span class="response-count">10 commands</span><span class="chevron"><!-- @license lucide-static v0.468.0 - ISC -->
+<svg aria-hidden="true" focusable="false"
+  class="lucide lucide-chevron-down"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m6 9 6 6 6-6" />
+</svg>
+</span></summary>
+              <div class="responses"><div class="response-heading"><h4>Participant commands</h4><span>T4 / P01&ndash;P10</span></div>
+              <ol class="command-list"><li data-command-id="P01-T4"><span class="participant">Participant 01</span><blockquote><p>For the trip to WP3, use cost 5 for Zone A and 200 for Zone B.</p></blockquote></li><li data-command-id="P02-T4"><span class="participant">Participant 02</span><blockquote><p>I&#x27;d like the destination to be WP3, with Zone A set to 5 and Zone B set to 200.</p></blockquote></li><li data-command-id="P03-T4"><span class="participant">Participant 03</span><blockquote><p>Could you route it to WP3 with a cost of 5 for Zone A and 200 for Zone B?</p></blockquote></li><li data-command-id="P04-T4"><span class="participant">Participant 04</span><blockquote><p>The target is WP3. Use a cost value of 5 for Zone A and 200 for Zone B.</p></blockquote></li><li data-command-id="P05-T4"><span class="participant">Participant 05</span><blockquote><p>Go to WP3 with Zone A cost set to 5 and Zone B cost set to 200.</p></blockquote></li><li data-command-id="P06-T4"><span class="participant">Participant 06</span><blockquote><p>Please configure Zone A with cost 5 and Zone B with cost 200 before directing the robot to WP3.</p></blockquote></li><li data-command-id="P07-T4"><span class="participant">Participant 07</span><blockquote><p>Go to WP3 with Zone A at 5 and Zone B at 200.</p></blockquote></li><li data-command-id="P08-T4"><span class="participant">Participant 08</span><blockquote><p>Let&#x27;s use 5 for Zone A and 200 for Zone B while heading to WP3.</p></blockquote></li><li data-command-id="P09-T4"><span class="participant">Participant 09</span><blockquote><p>Plan for WP3 using cost 5 in Zone A, while giving Zone B a much higher cost of 200.</p></blockquote></li><li data-command-id="P10-T4"><span class="participant">Participant 10</span><blockquote><p>Send it to WP3, using 5 for Zone A and 200 for Zone B.</p></blockquote></li></ol></div>
+            </details><details class="task" id="t5">
+              <summary><span class="task-id">T5</span><span class="task-brief"><span class="task-title">Ordered waypoints with a keepout</span>
+                <span class="requirements"><span><b>Visit order</b> WP2, then WP7</span><span><b>Final destination</b> WP7</span><span><b>Keepout</b> Zone C</span></span>
+              </span><span class="response-count">10 commands</span><span class="chevron"><!-- @license lucide-static v0.468.0 - ISC -->
+<svg aria-hidden="true" focusable="false"
+  class="lucide lucide-chevron-down"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m6 9 6 6 6-6" />
+</svg>
+</span></summary>
+              <div class="responses"><div class="response-heading"><h4>Participant commands</h4><span>T5 / P01&ndash;P10</span></div>
+              <ol class="command-list"><li data-command-id="P01-T5"><span class="participant">Participant 01</span><blockquote><p>Go to WP2 first, then continue to WP7 without entering Zone C.</p></blockquote></li><li data-command-id="P02-T5"><span class="participant">Participant 02</span><blockquote><p>Please visit WP2 first and then go to the final destination, WP7, while avoiding Zone C throughout the route.</p></blockquote></li><li data-command-id="P03-T5"><span class="participant">Participant 03</span><blockquote><p>Have it go to WP2 first, then continue to WP7. It shouldn&#x27;t cross Zone C.</p></blockquote></li><li data-command-id="P04-T5"><span class="participant">Participant 04</span><blockquote><p>Navigate to WP2 first and then proceed to WP7, with Zone C kept off-limits.</p></blockquote></li><li data-command-id="P05-T5"><span class="participant">Participant 05</span><blockquote><p>First visit WP2, and after that go to WP7. Do not use Zone C.</p></blockquote></li><li data-command-id="P06-T5"><span class="participant">Participant 06</span><blockquote><p>The robot needs to visit WP2 first and WP7 afterward, with WP7 as the final destination. Zone C must not be entered.</p></blockquote></li><li data-command-id="P07-T5"><span class="participant">Participant 07</span><blockquote><p>Go to WP2 first, then go to WP7. Do not travel through Zone C.</p></blockquote></li><li data-command-id="P08-T5"><span class="participant">Participant 08</span><blockquote><p>Have it go to WP2 first and then continue to WP7 without entering Zone C.</p></blockquote></li><li data-command-id="P09-T5"><span class="participant">Participant 09</span><blockquote><p>Arrange the route so that the robot goes to WP2 first and then to WP7, without using Zone C.</p></blockquote></li><li data-command-id="P10-T5"><span class="participant">Participant 10</span><blockquote><p>It should go to WP2 first and then continue to WP7, without passing through Zone C.</p></blockquote></li></ol></div>
+            </details><details class="task" id="t6">
+              <summary><span class="task-id">T6</span><span class="task-brief"><span class="task-title">Keepout with person avoidance</span>
+                <span class="requirements"><span><b>Destination</b> WP8</span><span><b>Keepout</b> Zone D</span><span><b>People</b> Maintain the default safety distance</span></span>
+              </span><span class="response-count">10 commands</span><span class="chevron"><!-- @license lucide-static v0.468.0 - ISC -->
+<svg aria-hidden="true" focusable="false"
+  class="lucide lucide-chevron-down"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m6 9 6 6 6-6" />
+</svg>
+</span></summary>
+              <div class="responses"><div class="response-heading"><h4>Participant commands</h4><span>T6 / P01&ndash;P10</span></div>
+              <ol class="command-list"><li data-command-id="P01-T6"><span class="participant">Participant 01</span><blockquote><p>Go over to WP8, avoiding Zone D and any people nearby.</p></blockquote></li><li data-command-id="P02-T6"><span class="participant">Participant 02</span><blockquote><p>Could you go to WP8 without passing through Zone D, while also keeping away from people?</p></blockquote></li><li data-command-id="P03-T6"><span class="participant">Participant 03</span><blockquote><p>Send the robot to WP8, keeping clear of Zone D as well as people.</p></blockquote></li><li data-command-id="P04-T6"><span class="participant">Participant 04</span><blockquote><p>Reach WP8 without entering Zone D, with person avoidance enabled during navigation.</p></blockquote></li><li data-command-id="P05-T6"><span class="participant">Participant 05</span><blockquote><p>Go to WP8 without entering Zone D, and also keep a safe distance from people.</p></blockquote></li><li data-command-id="P06-T6"><span class="participant">Participant 06</span><blockquote><p>Direct it to WP8, ensuring that it avoids Zone D and does not approach people too closely.</p></blockquote></li><li data-command-id="P07-T6"><span class="participant">Participant 07</span><blockquote><p>Head to WP8. Avoid Zone D and maintain distance from people.</p></blockquote></li><li data-command-id="P08-T6"><span class="participant">Participant 08</span><blockquote><p>Take it to WP8, but steer around Zone D and anybody in the area.</p></blockquote></li><li data-command-id="P09-T6"><span class="participant">Participant 09</span><blockquote><p>Find a path to WP8 that excludes Zone D and keeps distance from people along the way.</p></blockquote></li><li data-command-id="P10-T6"><span class="participant">Participant 10</span><blockquote><p>Take the robot to WP8 without entering Zone D, and keep the usual distance from anyone nearby.</p></blockquote></li></ol></div>
+            </details></div></section>
+<section class="category category-03" aria-labelledby="category-03">
+          <header class="category-header"><span class="category-number">03</span><div><h3 id="category-03">Conditional policies</h3><p>A keepout rule with a time limit or an event-dependent exception.</p></div><span class="category-total">2 tasks</span></header>
+          <div class="task-list"><details class="task" id="t7">
+              <summary><span class="task-id">T7</span><span class="task-brief"><span class="task-title">Time-limited keepout</span>
+                <span class="requirements"><span><b>Destination</b> WP4</span><span><b>Keepout</b> Zone B</span><span><b>Duration</b> 5 minutes, starting now</span></span>
+              </span><span class="response-count">10 commands</span><span class="chevron"><!-- @license lucide-static v0.468.0 - ISC -->
+<svg aria-hidden="true" focusable="false"
+  class="lucide lucide-chevron-down"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m6 9 6 6 6-6" />
+</svg>
+</span></summary>
+              <div class="responses"><div class="response-heading"><h4>Participant commands</h4><span>T7 / P01&ndash;P10</span></div>
+              <ol class="command-list"><li data-command-id="P01-T7"><span class="participant">Participant 01</span><blockquote><p>Make Zone B unavailable for the next five minutes and go to WP4.</p></blockquote></li><li data-command-id="P02-T7"><span class="participant">Participant 02</span><blockquote><p>Please prohibit travel through Zone B for five minutes from now and continue to WP4.</p></blockquote></li><li data-command-id="P03-T7"><span class="participant">Participant 03</span><blockquote><p>For five minutes starting now, don&#x27;t let it use Zone B. The destination is WP4.</p></blockquote></li><li data-command-id="P04-T7"><span class="participant">Participant 04</span><blockquote><p>Temporarily restrict Zone B for five minutes beginning now, then navigate to WP4 under that condition.</p></blockquote></li><li data-command-id="P05-T7"><span class="participant">Participant 05</span><blockquote><p>Do not allow travel through Zone B for five minutes from now while going to WP4.</p></blockquote></li><li data-command-id="P06-T7"><span class="participant">Participant 06</span><blockquote><p>Starting now, block access to Zone B for exactly five minutes and have the robot proceed to WP4.</p></blockquote></li><li data-command-id="P07-T7"><span class="participant">Participant 07</span><blockquote><p>Block Zone B for the next five minutes. Continue to WP4.</p></blockquote></li><li data-command-id="P08-T7"><span class="participant">Participant 08</span><blockquote><p>For the next five minutes, treat Zone B as closed and send the robot to WP4.</p></blockquote></li><li data-command-id="P09-T7"><span class="participant">Participant 09</span><blockquote><p>For a period of five minutes beginning now, plan the route to WP4 without any passage through Zone B.</p></blockquote></li><li data-command-id="P10-T7"><span class="participant">Participant 10</span><blockquote><p>Starting now, close Zone B for five minutes and go to WP4 without using Zone B during that period.</p></blockquote></li></ol></div>
+            </details><details class="task" id="t8">
+              <summary><span class="task-id">T8</span><span class="task-brief"><span class="task-title">Fire-alarm exception</span>
+                <span class="requirements"><span><b>Destination</b> WP2</span><span><b>Normal state</b> Zone A is forbidden</span><span><b>While fire_alarm is active</b> Allow passage through Zone A</span></span>
+              </span><span class="response-count">10 commands</span><span class="chevron"><!-- @license lucide-static v0.468.0 - ISC -->
+<svg aria-hidden="true" focusable="false"
+  class="lucide lucide-chevron-down"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m6 9 6 6 6-6" />
+</svg>
+</span></summary>
+              <div class="responses"><div class="response-heading"><h4>Participant commands</h4><span>T8 / P01&ndash;P10</span></div>
+              <ol class="command-list"><li data-command-id="P01-T8"><span class="participant">Participant 01</span><blockquote><p>Travel to WP2 without using Zone A normally. If fire_alarm comes on, it&#x27;s okay to pass through Zone A.</p></blockquote></li><li data-command-id="P02-T8"><span class="participant">Participant 02</span><blockquote><p>Under normal conditions, please avoid Zone A while traveling to WP2. When fire_alarm is active, allow the robot to use Zone A.</p></blockquote></li><li data-command-id="P03-T8"><span class="participant">Participant 03</span><blockquote><p>Can it avoid Zone A on the way to WP2, except when fire_alarm is on? During the alarm, Zone A can be used.</p></blockquote></li><li data-command-id="P04-T8"><span class="participant">Participant 04</span><blockquote><p>Navigate to WP2 with Zone A restricted in the normal state. If the fire_alarm event becomes active, permit passage through that zone.</p></blockquote></li><li data-command-id="P05-T8"><span class="participant">Participant 05</span><blockquote><p>Normally, don&#x27;t pass through Zone A when going to WP2. But if fire_alarm is active, passing through Zone A is allowed.</p></blockquote></li><li data-command-id="P06-T8"><span class="participant">Participant 06</span><blockquote><p>When traveling to WP2, Zone A should normally remain blocked. If fire_alarm is activated, temporarily allow passage through Zone A.</p></blockquote></li><li data-command-id="P07-T8"><span class="participant">Participant 07</span><blockquote><p>Go to WP2 while avoiding Zone A by default. Allow travel through Zone A only while fire_alarm is active.</p></blockquote></li><li data-command-id="P08-T8"><span class="participant">Participant 08</span><blockquote><p>Usually it should stay out of Zone A on the way to WP2. If fire_alarm is triggered, though, let it pass through Zone A.</p></blockquote></li><li data-command-id="P09-T8"><span class="participant">Participant 09</span><blockquote><p>Plan a route to WP2 that normally excludes Zone A. If fire_alarm becomes active, revise the rule so that Zone A is available.</p></blockquote></li><li data-command-id="P10-T8"><span class="participant">Participant 10</span><blockquote><p>Keep Zone A closed while the robot goes to WP2 in the normal situation. If fire_alarm is active, open Zone A for travel.</p></blockquote></li></ol></div>
+            </details></div></section>
+      <p class="submission-note"><strong>Before submitting:</strong> check destinations, zone labels, visit order, costs, durations, and event conditions against each task brief.</p>
+    </section>
+  </main>
+  <footer><div class="shell footer-inner"><span>Policy Bridge &middot; Non-expert evaluation</span><span>Commands reproduced from the paper's 80-command dataset.</span></div></footer>
+  <dialog id="map-dialog" aria-labelledby="dialog-title"><div class="dialog-heading"><span id="dialog-title">Study map</span><button type="button" class="icon-button" id="close-map" aria-label="Close study map" title="Close study map"><!-- @license lucide-static v0.468.0 - ISC -->
+<svg aria-hidden="true" focusable="false"
+  class="lucide lucide-x"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M18 6 6 18" />
+  <path d="m6 6 12 12" />
+</svg>
+</button></div><img id="large-map" alt="Enlarged study map with waypoints WP1 to WP8 and Zones A to E."></dialog>
+  <script>
+    const tasks = [...document.querySelectorAll('details.task')];
+    const toggleAll = document.getElementById('toggle-all');
+    function updateToggle() { toggleAll.textContent = tasks.every(task => task.open) ? 'Collapse all' : 'Expand all'; }
+    toggleAll.addEventListener('click', () => { const open = !tasks.every(task => task.open); tasks.forEach(task => { task.open = open; }); updateToggle(); });
+    tasks.forEach(task => task.addEventListener('toggle', updateToggle));
+    const mapDialog = document.getElementById('map-dialog');
+    document.getElementById('open-map').addEventListener('click', () => {
+      document.getElementById('large-map').src = document.querySelector('.study-map').src;
+      mapDialog.showModal();
+    });
+    document.getElementById('close-map').addEventListener('click', () => mapDialog.close());
+    mapDialog.addEventListener('click', event => {
+      const bounds = mapDialog.getBoundingClientRect();
+      if (event.target === mapDialog && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) mapDialog.close();
+    });
+    function openLinkedTask() { const task = tasks.find(item => '#' + item.id === location.hash); if (task) task.open = true; }
+    window.addEventListener('hashchange', openLinkedTask);
+    openLinkedTask();
+  </script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+{
+  "description": "Reference map rendered from the Policy Bridge GUI scene, not a schematic.",
+  "sources": [
+    {
+      "file": "factory6.yaml",
+      "sha256": "d06178432fee2a3d4f61c07e1f3c62fa94728383d3c41b1e680fd3d71389702a"
+    },
+    {
+      "file": "factory6.pgm",
+      "sha256": "c109725269775223c904c0627311acdbe2a98ed0d63765091b69f006492557b9"
+    },
+    {
+      "file": "factory6_waypoints.yaml",
+      "sha256": "dc13b6fdd7a72db945a3a8fc57c9f73dee6a30642d6a6b2a28f3b581f3a38085"
+    }
+  ],
+  "renderer": "policy_bridge.waypoint_map_gui.WaypointMapView",
+  "resolution_m_per_source_pixel": 0.05,
+  "origin": [
+    -4.89,
+    -22.4,
+    0.0
+  ],
+  "source_image_size": [
+    838,
+    536
+  ],
+  "output_image_size": [
+    1676,
+    1072
+  ],
+  "render_scale": 2,
+  "waypoints": {
+    "WP1": {
+      "x": -0.2,
+      "y": 0.41,
+      "yaw": 0.0,
+      "image_pixel": [
+        187.59999999999997,
+        159.60000000000014
+      ]
+    },
+    "WP2": {
+      "x": 32.2,
+      "y": 0.41,
+      "yaw": 0.0,
+      "image_pixel": [
+        1483.6000000000001,
+        159.60000000000014
+      ]
+    },
+    "WP3": {
+      "x": -0.2,
+      "y": -4.56,
+      "yaw": 0.0,
+      "image_pixel": [
+        187.59999999999997,
+        358.4000000000001
+      ]
+    },
+    "WP4": {
+      "x": 32.2,
+      "y": -4.56,
+      "yaw": 0.0,
+      "image_pixel": [
+        1483.6000000000001,
+        358.4000000000001
+      ]
+    },
+    "WP5": {
+      "x": -0.2,
+      "y": -13.4,
+      "yaw": 0.0,
+      "image_pixel": [
+        187.59999999999997,
+        712.0000000000001
+      ]
+    },
+    "WP6": {
+      "x": 32.2,
+      "y": -13.4,
+      "yaw": 0.0,
+      "image_pixel": [
+        1483.6000000000001,
+        712.0000000000001
+      ]
+    },
+    "WP7": {
+      "x": -0.2,
+      "y": -18.1,
+      "yaw": 0.0,
+      "image_pixel": [
+        187.59999999999997,
+        900.0000000000001
+      ]
+    },
+    "WP8": {
+      "x": 32.2,
+      "y": -18.1,
+      "yaw": 0.0,
+      "image_pixel": [
+        1483.6000000000001,
+        900.0000000000001
+      ]
+    }
+  },
+  "zones": {
+    "A": {
+      "x_min": 8.01,
+      "y_min": -1.55,
+      "x_max": 23.96,
+      "y_max": 1.9
+    },
+    "B": {
+      "x_min": 8.01,
+      "y_min": -6.05,
+      "x_max": 24.01,
+      "y_max": -2.6
+    },
+    "C": {
+      "x_min": 8.01,
+      "y_min": -10.7,
+      "x_max": 24.06,
+      "y_max": -7.2
+    },
+    "D": {
+      "x_min": 8.01,
+      "y_min": -15.2,
+      "x_max": 24.01,
+      "y_max": -11.7
+    },
+    "E": {
+      "x_min": 8.01,
+      "y_min": -19.7,
+      "x_max": 24.01,
+      "y_max": -16.2
+    }
+  }
+}

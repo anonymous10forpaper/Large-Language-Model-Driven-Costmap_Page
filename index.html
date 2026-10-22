@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Policy Bridge translates English operator commands into validated Nav2 policies and runtime costmap updates for industrial AMRs.">
+  <meta name="theme-color" content="#11202a">
+  <meta property="og:title" content="Policy Bridge | Natural-Language to Nav2">
+  <meta property="og:description" content="A local-LLM policy interface for keepouts, soft costs, object-aware navigation, and robot missions.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://anonymous10forpaper.github.io/Large-Language-Model-Driven-Costmap_Page/">
+  <meta property="og:image" content="https://anonymous10forpaper.github.io/Large-Language-Model-Driven-Costmap_Page/assets/policy-bridge-single-robot-20260801.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Policy Bridge | Natural-Language to Nav2</title>
+  <link rel="stylesheet" href="styles-20260731-4.css?v=20261021-benchmark">
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+  <script src="script-20260731.js?v=20261021-benchmark" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <div class="nav-shell">
+      <a class="brand" href="#top" aria-label="Policy Bridge home">
+        <span class="brand-mark" aria-hidden="true">PB</span>
+        <span>
+          <strong>Policy Bridge</strong>
+          <small>Natural-Language to Nav2</small>
+        </span>
+      </a>
+
+      <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-button>
+        <i data-lucide="menu" aria-hidden="true"></i>
+      </button>
+
+      <nav class="nav-links" aria-label="Primary navigation" data-nav>
+        <a href="#workflow">Workflow</a>
+        <a href="#interface">Interface</a>
+        <a href="#deployment">Demos</a>
+        <a href="user-study.html">User Study</a>
+        <a href="benchmark.html">Benchmark</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#start">Run</a>
+        <a class="nav-repo" href="https://github.com/anonymous10forpaper/Large-Language-Model-Driven-Costmap" target="_blank" rel="noreferrer">
+          <i data-lucide="github" aria-hidden="true"></i>
+          Repository
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <img class="hero-image" src="assets/policy-bridge-single-robot-20260801.png" alt="Policy Bridge single-robot mission interface showing an active natural-language navigation policy">
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow"><span></span> ROS 2 Humble · Nav2 · Local LLM</p>
+        <h1 id="hero-title">Policy Bridge</h1>
+        <p class="hero-kicker">Natural-Language to Nav2 for Industrial AMRs</p>
+        <p class="hero-copy">
+          Turn an operator's English command into a structured, validated policy that updates keepouts,
+          zone costs, object clearance, and ordered robot goals at runtime.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#workflow">
+            See the workflow
+            <i data-lucide="arrow-down" aria-hidden="true"></i>
+          </a>
+          <a class="button button-secondary" href="https://github.com/anonymous10forpaper/Large-Language-Model-Driven-Costmap" target="_blank" rel="noreferrer">
+            <i data-lucide="github" aria-hidden="true"></i>
+            View repository
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="signal-band" aria-label="System summary">
+      <div class="section-shell signal-grid">
+        <div class="signal-item">
+          <span class="signal-index">01</span>
+          <div><strong>Local-first interpretation</strong><span>Ollama-compatible Qwen and Llama models</span></div>
+        </div>
+        <div class="signal-item">
+          <span class="signal-index">02</span>
+          <div><strong>Validated policy boundary</strong><span>Schema, domain, range, and conflict checks</span></div>
+        </div>
+        <div class="signal-item">
+          <span class="signal-index">03</span>
+          <div><strong>Runtime Nav2 integration</strong><span>Three policy-aware custom costmap layers</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="workflow" aria-labelledby="workflow-title">
+      <div class="section-shell">
+        <div class="section-heading">
+          <p class="section-label">System workflow</p>
+          <h2 id="workflow-title">One command, three explicit stages.</h2>
+          <p>The language model owns semantic interpretation. The validator checks the policy contract before ROS topics or Nav2 goals can change.</p>
+        </div>
+
+        <div class="workflow-grid">
+          <article class="workflow-step">
+            <div class="step-number">1</div>
+            <i data-lucide="message-square-text" aria-hidden="true"></i>
+            <h3>Interpret</h3>
+            <p>An English command is converted into policy JSON with route, zone, object, time, and event fields.</p>
+          </article>
+          <article class="workflow-step">
+            <div class="step-number">2</div>
+            <i data-lucide="shield-check" aria-hidden="true"></i>
+            <h3>Validate</h3>
+            <p>Unknown labels, malformed structures, invalid ranges, and contradictory field roles are rejected.</p>
+          </article>
+          <article class="workflow-step">
+            <div class="step-number">3</div>
+            <i data-lucide="layers-3" aria-hidden="true"></i>
+            <h3>Project</h3>
+            <p>Validated fields are published to keepout, soft-cost, and object-aware costmap layers.</p>
+          </article>
+          <article class="workflow-step">
+            <div class="step-number">4</div>
+            <i data-lucide="route" aria-hidden="true"></i>
+            <h3>Navigate</h3>
+            <p>Named waypoints and required transit zones become an ordered Nav2 mission with live progress.</p>
+          </article>
+        </div>
+
+        <div class="command-demo" aria-label="Natural-language command example">
+          <div class="command-source">
+            <span class="demo-label">Operator command</span>
+            <blockquote>“Please go to WP8 through Zone C without entering Zone A, set Zone B’s cost to 200, and keep at least 1.5 m away from people.”</blockquote>
+          </div>
+          <div class="command-arrow" aria-hidden="true"><i data-lucide="arrow-right"></i></div>
+          <pre><code>{
+  "plan": [{"dest": "WP8"}],
+  "via_zones": ["C"],
+  "exclusions": [{"zone": "A"}],
+  "weights": [{"zone": "B", "cost": 200}],
+  "dynamic_object_rules": [
+    {"class": "person", "radius": 1.5}
+  ]
+}</code></pre>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="interface" aria-labelledby="interface-title">
+      <div class="section-shell">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="section-label">Operator interface</p>
+            <h2 id="interface-title">Built around the mission, not the model.</h2>
+          </div>
+          <p>The GUI keeps the active policy, route, environment state, queue, and Nav2 progress visible while the robot moves.</p>
+        </div>
+
+        <article class="feature-row feature-row-large">
+          <a class="feature-media" href="assets/policy-bridge-single-robot-20260801.png" target="_blank" aria-label="Open the full single-robot mission screenshot">
+            <img src="assets/policy-bridge-single-robot-20260801.png" alt="Single-robot mission dashboard with command input, active policy, and navigation progress">
+          </a>
+          <div class="feature-copy">
+            <span class="feature-tag">Single robot</span>
+            <h3>Command and monitor in one view.</h3>
+            <p>Submit a natural-language task, choose the local LLM, and watch each stage move from interpretation to costmap update and navigation.</p>
+            <ul class="check-list">
+              <li><i data-lucide="check" aria-hidden="true"></i> Live keepout and soft-cost state</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Ordered waypoint and zone progress</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Pause, resume, cancel, and FIFO queue</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Fire-alarm and battery event controls</li>
+            </ul>
+          </div>
+        </article>
+
+        <div class="feature-pair">
+          <article class="feature-block">
+            <div class="map-carousel" data-carousel aria-label="Map setup process">
+              <div class="carousel-viewport">
+                <a class="feature-media carousel-slide is-active" href="assets/map-setup-main-1-base.png" target="_blank" data-carousel-slide data-title="Start from the saved map" aria-label="Open map setup step 1">
+                  <img src="assets/map-setup-main-1-base.png" alt="Map Setup with eight existing waypoints and five policy zones">
+                </a>
+                <a class="feature-media carousel-slide" href="assets/map-setup-main-2-wp9.png" target="_blank" data-carousel-slide data-title="Add and place WP9" aria-label="Open map setup step 2" aria-hidden="true" tabindex="-1">
+                  <img src="assets/map-setup-main-2-wp9.png" alt="Map Setup after WP9 is added and positioned using map coordinates">
+                </a>
+                <a class="feature-media carousel-slide" href="assets/map-setup-main-3-zone-bounds.png" target="_blank" data-carousel-slide data-title="Define the new zone bounds" aria-label="Open map setup step 3" aria-hidden="true" tabindex="-1">
+                  <img src="assets/map-setup-main-3-zone-bounds.png" alt="Zones panel ready to define a new policy region using map bounds">
+                </a>
+                <a class="feature-media carousel-slide" href="assets/map-setup-main-4-zone-f.png" target="_blank" data-carousel-slide data-title="Confirm Zone F on the map" aria-label="Open map setup step 4" aria-hidden="true" tabindex="-1">
+                  <img src="assets/map-setup-main-4-zone-f.png" alt="Map Setup showing WP9 and the newly configured Zone F">
+                </a>
+                <button class="carousel-control carousel-control-prev" type="button" data-carousel-prev aria-label="Previous map setup step" title="Previous step">
+                  <i data-lucide="chevron-left" aria-hidden="true"></i>
+                </button>
+                <button class="carousel-control carousel-control-next" type="button" data-carousel-next aria-label="Next map setup step" title="Next step">
+                  <i data-lucide="chevron-right" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="carousel-meta" aria-live="polite">
+                <div>
+                  <span>Setup step <strong data-carousel-counter>1 / 4</strong></span>
+                  <p data-carousel-title>Start from the saved map</p>
+                </div>
+                <div class="carousel-dots" aria-label="Choose a map setup step">
+                  <button type="button" class="is-active" data-carousel-dot="0" aria-label="Show setup step 1" aria-current="true"></button>
+                  <button type="button" data-carousel-dot="1" aria-label="Show setup step 2"></button>
+                  <button type="button" data-carousel-dot="2" aria-label="Show setup step 3"></button>
+                  <button type="button" data-carousel-dot="3" aria-label="Show setup step 4"></button>
+                </div>
+              </div>
+            </div>
+            <div class="feature-copy">
+              <span class="feature-tag tag-green">Map setup</span>
+              <h3>Make the map's policy vocabulary editable.</h3>
+              <p>Add waypoints by map click or map-frame coordinates, draw policy zones or enter their bounds, and save the labels as a map-specific setup.</p>
+            </div>
+          </article>
+
+          <article class="feature-block">
+            <div class="map-carousel" data-carousel aria-label="Multi-robot discovery examples">
+              <div class="carousel-viewport">
+                <a class="feature-media carousel-slide is-active" href="assets/policy-bridge-multi.png" target="_blank" data-carousel-slide data-title="Two robots discovered at runtime" aria-label="Open the two-robot mission screenshot">
+                  <img src="assets/policy-bridge-multi.png" alt="Multi-robot mission interface with dynamically discovered TB1 and TB2 panels">
+                </a>
+                <a class="feature-media carousel-slide" href="assets/policy-bridge-multi-3.png" target="_blank" data-carousel-slide data-title="Three robots discovered at runtime" aria-label="Open the three-robot mission screenshot" aria-hidden="true" tabindex="-1">
+                  <img src="assets/policy-bridge-multi-3.png" alt="Multi-robot mission interface expanded with TB1, TB2, and TB3 panels">
+                </a>
+                <button class="carousel-control carousel-control-prev" type="button" data-carousel-prev aria-label="Previous multi-robot example" title="Previous example">
+                  <i data-lucide="chevron-left" aria-hidden="true"></i>
+                </button>
+                <button class="carousel-control carousel-control-next" type="button" data-carousel-next aria-label="Next multi-robot example" title="Next example">
+                  <i data-lucide="chevron-right" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="carousel-meta" aria-live="polite">
+                <div>
+                  <span>Fleet view <strong data-carousel-counter>1 / 2</strong></span>
+                  <p data-carousel-title>Two robots discovered at runtime</p>
+                </div>
+                <div class="carousel-dots" aria-label="Choose a multi-robot example">
+                  <button type="button" class="is-active" data-carousel-dot="0" aria-label="Show two-robot example" aria-current="true"></button>
+                  <button type="button" data-carousel-dot="1" aria-label="Show three-robot example"></button>
+                </div>
+              </div>
+            </div>
+            <div class="feature-copy">
+              <span class="feature-tag tag-coral">Multi robot</span>
+              <h3>Discover namespaced Nav2 robots at runtime.</h3>
+              <p>The interface adds one mission panel per discovered namespace, while costmap policies remain shared across the fleet.</p>
+            </div>
+          </article>
+        </div>
+
+        <article class="feature-row inspector-row">
+          <div class="feature-copy">
+            <span class="feature-tag tag-amber">Policy inspector</span>
+            <h3>See what the model produced and what the system accepted.</h3>
+            <p>Raw LLM output, validated JSON, validator findings, and active policy state are separated for debugging and experiment auditing.</p>
+          </div>
+          <a class="feature-media" href="assets/policy-bridge-inspector.png" target="_blank" aria-label="Open the full Policy Inspector screenshot">
+            <img src="assets/policy-bridge-inspector.png" alt="Policy Inspector displaying validated policy JSON and active costmap policy fields">
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="deployment" aria-labelledby="deployment-title">
+      <div class="section-shell">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="section-label">Runtime demonstrations</p>
+            <h2 id="deployment-title">Extend one map, then operate one or many robots.</h2>
+          </div>
+          <p>Map-specific labels become executable policy inputs, while namespaced Nav2 stacks keep each route independent and receive a shared fleet costmap policy.</p>
+        </div>
+
+        <article class="deployment-row">
+          <div class="deployment-copy">
+            <span class="feature-tag tag-green">Waypoint and zone extension</span>
+            <h3>New labels remain executable in Nav2.</h3>
+            <p>In this demonstration, WP9 is placed from the map interface and Zone F is drawn as an additional policy region. The saved setup is used by command interpretation, validation, the waypoint mission, and the zone-aware costmap layers.</p>
+            <ol class="setup-steps">
+              <li><span>1</span><div><strong>Add WP9</strong><p>Click the map or enter map-frame coordinates.</p></div></li>
+              <li><span>2</span><div><strong>Add Zone F</strong><p>Draw a rectangle or enter its map bounds.</p></div></li>
+              <li><span>3</span><div><strong>Execute the policy</strong><p>Run the natural-language command with the new labels.</p></div></li>
+            </ol>
+            <div class="demo-command">
+              <span>Operator command</span>
+              <code>Please go to WP9 without passing through Zone F.</code>
+            </div>
+          </div>
+
+          <figure class="demo-video">
+            <video controls preload="metadata" playsinline poster="assets/zone-waypoint-demo-poster.jpg">
+              <source src="assets/zone-waypoint-demo.mp4" type="video/mp4">
+              Your browser does not support embedded MP4 video.
+            </video>
+            <figcaption>The GUI submits the command first; Gazebo and RViz then show the robot, Zone F costmap projection, and route to WP9.</figcaption>
+          </figure>
+        </article>
+
+        <div class="fleet-setup">
+          <article class="deployment-row">
+            <div class="deployment-copy">
+              <span class="feature-tag tag-coral">Namespaced multi robot</span>
+              <h3>Keep routes robot-specific and costmap policy fleet-wide.</h3>
+              <p>Policy Bridge discovers each namespaced Nav2 robot and creates a separate mission panel, while shared policy layers apply the same Zone and object constraints across the fleet.</p>
+              <ol class="setup-steps">
+                <li><span>1</span><div><strong>Namespace every Nav2 stack</strong><p>Expose <code>/&lt;namespace&gt;/global_costmap/costmap</code> and <code>/&lt;namespace&gt;/follow_waypoints</code>.</p></div></li>
+                <li><span>2</span><div><strong>Load the same policy layers</strong><p>Add the keepout, soft-cost, and object-aware plugins to every robot's global costmap parameters.</p></div></li>
+                <li><span>3</span><div><strong>Send robot-specific missions</strong><p>Each robot follows its own route while Zone and object policies remain shared across the fleet.</p></div></li>
+              </ol>
+            </div>
+
+            <div class="fleet-media">
+              <figure class="demo-video fleet-video">
+                <video controls preload="metadata" playsinline poster="assets/policy-bridge-multi-3.png">
+                  <source src="assets/multi-robot-demo.mp4" type="video/mp4">
+                  Your browser does not support embedded MP4 video.
+                </video>
+                <figcaption>Three namespaced Nav2 robots execute independent waypoint missions while the timed Zone B and D restriction is shared across their global costmaps.</figcaption>
+              </figure>
+
+              <div class="fleet-command-panel">
+                <span class="demo-label">Commands shown in the video</span>
+                <div class="fleet-command-list">
+                  <div class="fleet-command">
+                    <span>TB1</span>
+                    <code>For the next 30 minutes, prohibit entry into Zone B and D and go to WP6.</code>
+                  </div>
+                  <div class="fleet-command">
+                    <span>TB2</span>
+                    <code>Visit WP5 first, followed by WP1.</code>
+                  </div>
+                  <div class="fleet-command">
+                    <span>TB3</span>
+                    <code>Navigate to WP1 before continuing to WP8.</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <div class="setup-details-grid">
+            <details class="setup-details">
+              <summary>Required global-costmap parameters <i data-lucide="chevron-down" aria-hidden="true"></i></summary>
+              <pre><code>plugins: [static_layer, obstacle_layer,
+          keepout_command_layer, zone_softcost_layer,
+          object_avoidance_layer, inflation_layer]
+
+keepout_command_layer:
+  plugin: "my_costmap_layers::KeepoutCommandLayer"
+  forbidden_zones_topic: "/fleet/forbidden_zones_update"
+  zone_geometry_topic: "/zone_geometry_update"
+
+zone_softcost_layer:
+  plugin: "my_costmap_layers::ZoneSoftCostLayer"
+  zone_cost_overrides_topic: "/fleet/zone_cost_overrides"
+  zone_geometry_topic: "/zone_geometry_update"
+
+object_avoidance_layer:
+  plugin: "my_costmap_layers::ObjectAvoidanceLayer"
+  object_positions_topic: "/fleet/object_world_positions"
+  object_avoidance_radius_topic: "/fleet/object_avoidance_radius"</code></pre>
+            </details>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="capabilities" aria-labelledby="capabilities-title">
+      <div class="section-shell">
+        <div class="section-heading split-heading light-heading">
+          <div>
+            <p class="section-label">Policy schema</p>
+            <h2 id="capabilities-title">A structured policy for navigation.</h2>
+          </div>
+          <p>The validated policy follows the same field-level contract used in the paper and implemented by Policy Bridge.</p>
+        </div>
+
+        <div class="capability-list">
+          <article><i data-lucide="circle-check" aria-hidden="true"></i><div><h3>Policy decision</h3><p>Accepts an executable interpretation or rejects the requested policy.</p></div><code>decision</code></article>
+          <article><i data-lucide="message-square-warning" aria-hidden="true"></i><div><h3>Rejection reason</h3><p>Identifies a contradiction or an unsupported policy request.</p></div><code>reason_code</code></article>
+          <article><i data-lucide="map-pin" aria-hidden="true"></i><div><h3>Ordered mission</h3><p>Waypoint labels or map-frame poses arranged in execution order.</p></div><code>plan</code></article>
+          <article><i data-lucide="route" aria-hidden="true"></i><div><h3>Required transit zones</h3><p>Named zones that the planned route must traverse.</p></div><code>via_zones</code></article>
+          <article><i data-lucide="ban" aria-hidden="true"></i><div><h3>Zone keepouts</h3><p>Zone-level exclusions with an optional duration or temporal condition.</p></div><code>exclusions</code></article>
+          <article><i data-lucide="gauge" aria-hidden="true"></i><div><h3>Differential costs</h3><p>Explicit zone-specific soft costs from 0 to 253.</p></div><code>weights</code></article>
+          <article><i data-lucide="scan-face" aria-hidden="true"></i><div><h3>Object avoidance</h3><p>Recognized object classes and their required clearance radii.</p></div><code>dynamic_object_rules</code></article>
+          <article><i data-lucide="alarm-smoke" aria-hidden="true"></i><div><h3>Conditional policy</h3><p>Zone actions activated by states such as a fire alarm or low battery.</p></div><code>conditional_rules</code></article>
+        </div>
+
+        <div class="runtime-strip">
+          <div><span>LLM runtime</span><strong>Ollama compatible</strong></div>
+          <div><span>Evaluated families</span><strong>Qwen · Llama</strong></div>
+          <div><span>Robot stack</span><strong>ROS 2 Humble · Nav2</strong></div>
+          <div><span>Reference platform</span><strong>TurtleBot3</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section route-section" aria-labelledby="route-title">
+      <div class="section-shell route-layout">
+        <div class="route-copy">
+          <p class="section-label">Policy-aware navigation</p>
+          <h2 id="route-title">The policy becomes planner-visible geometry.</h2>
+          <p>Hard and weighted zone updates are projected into Nav2's costmap. The global planner then produces a route that reflects the validated policy rather than an unstructured language string.</p>
+          <dl>
+            <div><dt>KeepoutCommandLayer</dt><dd>Marks forbidden policy zones as lethal cost.</dd></div>
+            <div><dt>ZoneSoftCostLayer</dt><dd>Applies zone-specific traversability costs.</dd></div>
+            <div><dt>ObjectAvoidanceLayer</dt><dd>Maintains clearance around detected objects.</dd></div>
+          </dl>
+        </div>
+        <figure class="route-figure">
+          <a href="assets/rviz-policy-route.png" target="_blank" aria-label="Open the RViz policy-aware route image">
+            <img src="assets/rviz-policy-route.png" alt="RViz costmap showing a weighted policy zone and the resulting route">
+          </a>
+          <figcaption>RViz view with the policy region and resulting route visible together.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="start" aria-labelledby="start-title">
+      <div class="section-shell">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="section-label">Run the interface</p>
+            <h2 id="start-title">Build and launch the GUI.</h2>
+          </div>
+          <p>Place the packages in the workspace <code>src</code> directory, build them, source the workspace, and start Policy Bridge.</p>
+        </div>
+
+        <div class="code-tabs">
+          <div class="code-panel">
+            <button class="copy-button" type="button" aria-label="Copy build commands" title="Copy commands" data-copy="code-build"><i data-lucide="copy" aria-hidden="true"></i></button>
+            <pre id="code-build"><code>cd ~/turtlebot3_ws
+colcon build --packages-select my_costmap_layers policy_bridge --symlink-install
+source ~/turtlebot3_ws/install/setup.bash
+ros2 run policy_bridge policy_bridge_gui</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing-band" aria-labelledby="closing-title">
+      <div class="section-shell closing-layout">
+        <div>
+          <p class="section-label">Research prototype</p>
+          <h2 id="closing-title">Natural-Language to Nav2:<br>LLM-Driven Costmaps for Industrial AMRs</h2>
+        </div>
+        <a class="button button-light" href="https://github.com/anonymous10forpaper/Large-Language-Model-Driven-Costmap" target="_blank" rel="noreferrer">
+          <i data-lucide="github" aria-hidden="true"></i>
+          Open GitHub
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-shell footer-layout">
+      <div class="brand footer-brand">
+        <span class="brand-mark" aria-hidden="true">PB</span>
+        <span><strong>Policy Bridge</strong><small>ROS 2 navigation policy interface</small></span>
+      </div>
+      <p>Built for reproducible, inspectable natural-language robot policy execution.</p>
+      <a href="#top">Back to top <i data-lucide="arrow-up" aria-hidden="true"></i></a>
+    </div>
+  </footer>
+</body>
+</html>
